@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事例・FAQ｜DX-Consul</title>
+  <meta name="description" content="DX-Consulのコンサルティング事例とよくある質問をご紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0D2B4E;--teal:#0A7B74;--teal-light:#12A89E;--blue:#1A6FBB;--blue-light:#E0F0FF;--accent:#F5A623;--accent2:#E8522A;--text:#1A1A1A;--text-sub:#555;--bg:#FFF;--bg-gray:#F7F9FC;--border:#DDE6EF;--radius:10px;--shadow:0 4px 24px rgba(13,43,78,.10);--shadow-lg:0 8px 40px rgba(13,43,78,.18);--max:1060px;--font:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.8;font-size:16px;}
+    a{color:var(--blue);text-decoration:none;}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+    .section{padding:88px 0;}
+    .section-gray{background:var(--bg-gray);}
+    .label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--teal);background:#E0F5F4;padding:4px 16px;border-radius:20px;margin-bottom:14px;}
+    .sec-title{font-size:clamp(24px,3.8vw,36px);font-weight:900;line-height:1.35;margin-bottom:14px;}
+    .sec-sub{font-size:15px;color:var(--text-sub);max-width:620px;line-height:1.9;}
+    .sec-head{text-align:center;margin-bottom:60px;}
+    .sec-head .sec-sub{margin:0 auto;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;transition:all .22s;text-decoration:none;border:none;}
+    .btn-accent{background:var(--accent2);color:#fff;box-shadow:0 4px 18px rgba(232,82,42,.35);}
+    .btn-accent:hover{background:#d04420;transform:translateY(-2px);}
+    .btn-white{background:#fff;color:var(--navy);box-shadow:0 4px 18px rgba(0,0,0,.14);}
+    .btn-white:hover{background:#f0f8ff;transform:translateY(-2px);}
+    .btn-teal{background:var(--teal);color:#fff;box-shadow:0 4px 18px rgba(10,123,116,.3);}
+    .btn-teal:hover{background:#086b65;transform:translateY(-2px);}
+
+    /* HEADER */
+    #hd{position:relative;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(13,43,78,.07);}
+    .hd-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 24px;}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .logo-icon{width:40px;height:40px;border-radius:8px;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .logo-icon svg{width:28px;height:28px;}
+    .logo-name{font-size:19px;font-weight:900;color:var(--navy);}
+    .logo-name span{color:var(--teal);}
+    .hd-nav{display:flex;align-items:center;gap:28px;}
+    .hd-nav a{font-size:14px;font-weight:500;color:var(--text);position:relative;padding-bottom:2px;}
+    .hd-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--teal);transition:width .2s;}
+    .hd-nav a:hover::after,.hd-nav a.active::after{width:100%;}
+    .hd-nav a.active{color:var(--teal);font-weight:700;}
+    .hd-cta{background:var(--accent2);color:#fff !important;padding:10px 22px;border-radius:50px;font-weight:700 !important;font-size:13px !important;box-shadow:0 3px 12px rgba(232,82,42,.32);transition:all .2s;}
+    .hd-cta::after{display:none !important;}
+    .hd-cta:hover{background:#c93d1e !important;transform:translateY(-1px);}
+
+    /* PAGE HERO */
+    .page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);padding:64px 0;text-align:center;color:#fff;}
+    .page-hero h1{font-size:clamp(26px,4vw,42px);font-weight:900;margin-bottom:12px;}
+    .page-hero p{font-size:15px;color:rgba(255,255,255,.8);max-width:540px;margin:0 auto;}
+
+    /* CASES */
+    .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+    .case-card{background:#fff;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;transition:transform .25s,box-shadow .25s;}
+    .case-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+    .case-head{padding:22px 26px 18px;color:#fff;}
+    .case-ai .case-head{background:linear-gradient(135deg,#5B2D9E 0%,#9B59CF 100%);}
+    .case-it .case-head{background:linear-gradient(135deg,#1A6FBB 0%,#3B9AE8 100%);}
+    .case-dx .case-head{background:linear-gradient(135deg,#0A7B74 0%,#12C5BB 100%);}
+    .case-mix .case-head{background:linear-gradient(135deg,#1A4A8A 0%,#5B2D9E 100%);}
+    .case-tag{font-size:11px;font-weight:700;letter-spacing:.1em;opacity:.85;margin-bottom:8px;}
+    .case-head h3{font-size:18px;font-weight:900;margin-bottom:4px;}
+    .case-head .case-industry{font-size:13px;opacity:.8;}
+    .case-body{padding:24px 26px;}
+    .case-challenge{margin-bottom:16px;}
+    .case-challenge h4{font-size:12px;font-weight:700;color:var(--text-sub);letter-spacing:.1em;margin-bottom:6px;}
+    .case-challenge p{font-size:14px;color:var(--text);line-height:1.75;}
+    .case-results{display:flex;flex-wrap:wrap;gap:10px;}
+    .case-result-item{background:var(--bg-gray);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;color:var(--teal);}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:16px;}
+    .faq-item{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);}
+    .faq-question{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px;cursor:pointer;font-weight:700;font-size:15px;color:var(--text);user-select:none;transition:background .15s;}
+    .faq-question:hover{background:var(--bg-gray);}
+    .faq-q-icon{font-size:18px;font-weight:900;color:var(--teal);flex-shrink:0;width:28px;}
+    .faq-q-text{flex:1;}
+    .faq-toggle{font-size:20px;color:var(--teal);transition:transform .25s;flex-shrink:0;}
+    .faq-item.open .faq-toggle{transform:rotate(45deg);}
+    .faq-answer{display:none;padding:0 26px 22px 62px;font-size:14px;color:var(--text-sub);line-height:1.9;}
+    .faq-item.open .faq-answer{display:block;}
+
+    /* CTA */
+    #cta{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);padding:96px 0;text-align:center;}
+    #cta h2{font-size:clamp(24px,3.8vw,38px);font-weight:900;color:#fff;margin-bottom:14px;line-height:1.4;}
+    #cta p{font-size:16px;color:rgba(255,255,255,.82);max-width:520px;margin:0 auto 36px;line-height:1.9;}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .cta-note{margin-top:20px;font-size:13px;color:rgba(255,255,255,.65);}
+
+    /* FOOTER */
+    #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:52px 0 28px;}
+    .footer-top{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:36px;}
+    .footer-brand .logo-name{color:#fff;font-size:18px;}
+    .footer-brand .logo-name span{color:#6EFFF9;}
+    .footer-lead{font-size:13px;line-height:1.8;margin-top:14px;max-width:340px;}
+    .footer-info{margin-top:18px;font-size:13px;display:flex;flex-direction:column;gap:5px;}
+    .footer-info a{color:rgba(255,255,255,.75);}
+    .footer-nav{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+    .footer-nav a{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s;}
+    .footer-nav a:hover{color:#6EFFF9;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;font-size:12px;color:rgba(255,255,255,.45);}
+
+    @media(max-width:900px){
+      .case-grid{grid-template-columns:1fr;}
+      .footer-top{grid-template-columns:1fr;gap:24px;}
+      .footer-nav{align-items:flex-start;}
+    }
+    @media(max-width:600px){
+      .section{padding:60px 0;}
+      .hd-nav{display:none;}
+      .faq-answer{padding-left:26px;}
+    }
+    .fi{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease;}
+    .fi.vis{opacity:1;transform:none;}
+    .fi-d1{transition-delay:.08s;}
+    .fi-d2{transition-delay:.16s;}
+    .fi-d3{transition-delay:.24s;}
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hd">
+  <div class="hd-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 14 L13 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 10 L19 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="3" y="26" font-size="8" font-weight="900" fill="white" font-family="Arial">DX</text>
+        </svg>
+      </div>
+      <div class="logo-name">DX-<span>Consul</span></div>
+    </a>
+    <nav class="hd-nav">
+      <a href="index.html">ホーム</a>
+      <a href="service.html">サービス</a>
+      <a href="cases.html" class="active">ユースケース・FAQ</a>
+      <a href="contact.html" class="hd-cta">無料相談はこちら →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>ユースケース・FAQ</h1>
+  <p>「こんなことも頼めるんだ」と具体的にイメージできる活用シーンと、よくあるご質問をご紹介します。</p>
+</div>
+
+<!-- CASES -->
+<section id="cases" class="section">
+  <div class="container">
+    <div class="sec-head fi">
+      <div class="label">活用ユースケース</div>
+      <h2 class="sec-title">こんなご支援ができます</h2>
+      <p class="sec-sub">業種・規模・お悩みごとに、どんなサポートが可能かを具体的なシーンでご紹介します。「うちと似てるかも」と感じたら、まずはお気軽にご相談ください。</p>
+    </div>
+    <div class="case-grid">
+
+      <!-- 建設業 -->
+      <div class="case-card case-ai fi">
+        <div class="case-head">
+          <div class="case-tag">生成AI活用・定着支援</div>
+          <h3>書類・報告業務の負担を減らしたい</h3>
+          <div class="case-industry">活用イメージ：建設業・製造業など現場系</div>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge">
+            <h4>こんなお悩みに</h4>
+            <p>書類作成・日報・報告書に時間がかかり、現場担当者の残業が慢性化している。AIを使いたいが、ITに不慣れな社員が多く導入が進まない。</p>
+          </div>
+          <div class="case-challenge">
+            <h4>こんな支援ができます</h4>
+            <p>どの業務にAIが効くかを一緒に洗い出し、書類作成・議事録・顧客対応メールなどから段階的に導入。管理職研修→全社展開の順で、無理なく定着をサポートします。</p>
+          </div>
+          <div class="case-results">
+            <span class="case-result-item">書類作成の手間を削減</span>
+            <span class="case-result-item">残業・手戻りを減らす</span>
+            <span class="case-result-item">社員全員がAIを使える体制へ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 食品製造業 -->
+      <div class="case-card case-it fi fi-d1">
+        <div class="case-head">
+          <div class="case-tag">クラウド導入・活用支援</div>
+          <h3>紙・メール頼りの情報共有を変えたい</h3>
+          <div class="case-industry">活用イメージ：多拠点・製造・小売業など</div>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge">
+            <h4>こんなお悩みに</h4>
+            <p>社内共有がメール・紙ベースで手間がかかる。拠点間の連絡ミスや情報のすれ違いが多く、改善したいが何のツールを選べばよいかわからない。</p>
+          </div>
+          <div class="case-challenge">
+            <h4>こんな支援ができます</h4>
+            <p>自社に合ったクラウドツール（Google Workspace・Microsoft 365 等）を比較・提案し、導入から社内研修まで一貫してサポート。ツールを入れるだけでなく、実際に使いこなせるまで伴走します。</p>
+          </div>
+          <div class="case-results">
+            <span class="case-result-item">情報共有のスピードアップ</span>
+            <span class="case-result-item">ペーパーレス化・脱メール</span>
+            <span class="case-result-item">拠点間の連絡ミスを減らす</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 建機販売業 -->
+      <div class="case-card case-dx fi fi-d1">
+        <div class="case-head">
+          <div class="case-tag">DX伴走支援</div>
+          <h3>「DXを進めたい」が、何から手をつければいいかわからない</h3>
+          <div class="case-industry">活用イメージ：中堅・中小企業の経営者・管理職</div>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge">
+            <h4>こんなお悩みに</h4>
+            <p>「DXを推進せよ」という方針はあるが、優先順位が整理できず担当者が孤立しがち。どこに投資すべきか、社内だけでは判断が難しい。</p>
+          </div>
+          <div class="case-challenge">
+            <h4>こんな支援ができます</h4>
+            <p>現状の業務・課題のヒアリングから始め、自社に合ったDXロードマップを一緒に作ります。「計画して終わり」にならないよう、実行フェーズも継続して伴走します。</p>
+          </div>
+          <div class="case-results">
+            <span class="case-result-item">優先順位の整理・見える化</span>
+            <span class="case-result-item">DXロードマップの共同策定</span>
+            <span class="case-result-item">実行フェーズも継続サポート</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ベンチャー企業 -->
+      <div class="case-card case-mix fi fi-d2">
+        <div class="case-head">
+          <div class="case-tag">生成AI × クラウド 複合支援</div>
+          <h3>ツールがバラバラで、情報が属人化している</h3>
+          <div class="case-industry">活用イメージ：成長期のスタートアップ・小規模企業</div>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge">
+            <h4>こんなお悩みに</h4>
+            <p>業務ツールが統一されておらず、担当者ごとにやり方がバラバラ。人が増えるほど情報共有が難しくなり、引き継ぎや教育にコストがかかっている。</p>
+          </div>
+          <div class="case-challenge">
+            <h4>こんな支援ができます</h4>
+            <p>クラウドによる情報共有の基盤づくりと、ドキュメント作成・要約・翻訳へのAI活用を組み合わせて支援。少人数でも回る仕組みを一緒に設計します。</p>
+          </div>
+          <div class="case-results">
+            <span class="case-result-item">ツール・情報の一元化</span>
+            <span class="case-result-item">引き継ぎ・教育の仕組み化</span>
+            <span class="case-result-item">少人数でもスケールできる体制</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section section-gray">
+  <div class="container">
+    <div class="sec-head fi">
+      <div class="label">よくある質問</div>
+      <h2 class="sec-title">FAQ</h2>
+      <p class="sec-sub">お客様からよくいただくご質問にお答えします。</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item fi">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">IT担当者がいないのですが、相談できますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          はい、むしろそのようなお客様を主な対象としています。「ITのことは全然わからない」という経営者・管理職の方でも、わかりやすく丁寧にご説明しながら伴走します。専門知識は一切不要です。
+        </div>
+      </div>
+
+      <div class="faq-item fi fi-d1">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">どのくらいの規模の会社に対応していますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          従業員10名程度の小規模事業者から、100名規模の中小企業まで幅広く対応しています。会社の規模よりも「デジタルを使ってもっと楽に、強くなりたい」というお気持ちが大切です。
+        </div>
+      </div>
+
+      <div class="faq-item fi fi-d1">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">費用はどのくらいかかりますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          支援内容・期間・規模によって異なります。まずは無料相談でご状況をお聞かせいただき、最適なプランをご提案します。スポット相談から長期伴走契約まで柔軟に対応しています。
+        </div>
+      </div>
+
+      <div class="faq-item fi fi-d2">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">生成AIの導入は難しくないですか？社員が使えるか心配です。</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          ご安心ください。導入後の「定着支援」に特に力を入れています。社員向けの研修・マニュアル作成・個別フォローを通じて、ITが苦手なスタッフでも無理なく使いこなせるようサポートします。実際に導入企業のAI活用率は平均90%以上を達成しています。
+        </div>
+      </div>
+
+      <div class="faq-item fi fi-d2">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">沖縄県外の企業でも対応できますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          はい、オンラインでの対応が可能なため、全国どこからでもご相談いただけます。ビデオ会議・チャット・メールを組み合わせ、対面と変わらないサポートを提供しています。
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <h2>まずは無料でご相談ください</h2>
+    <p>お悩みをお聞きし、貴社に合った最適なアプローチをご提案します。費用・期間・進め方など、気になることは何でもお気軽にどうぞ。</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-accent">無料相談はこちら →</a>
+      <a href="service.html" class="btn btn-white">サービス詳細を見る</a>
+    </div>
+    <p class="cta-note">相談は完全無料・強引な営業は一切行いません</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-name">DX-<span>Consul</span></div>
+        <p class="footer-lead">IT選任が不在でも大丈夫。生成AI・クラウド・DX伴走支援で、中小企業のデジタル経営を身近にします。</p>
+        <div class="footer-info">
+          <span>〒901-2131 沖縄県浦添市牧港4-10</span>
+          <span>TEL: 098-875-9530</span>
+          <a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">ホーム</a>
+        <a href="service.html">サービス</a>
+        <a href="cases.html">ユースケース・FAQ</a>
+        <a href="contact.html">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2025 DX-Consul. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  function toggleFaq(el){
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // Fade-in on scroll
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');}});
+  },{threshold:0.12});
+  document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

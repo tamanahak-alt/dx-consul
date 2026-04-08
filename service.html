@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サービス案内｜DX-Consul</title>
+  <meta name="description" content="生成AI活用・定着支援、クラウド導入・活用支援、DX伴走支援の3つのメニューをご紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0D2B4E;--teal:#0A7B74;--teal-light:#12A89E;--blue:#1A6FBB;--blue-light:#E0F0FF;--accent:#F5A623;--accent2:#E8522A;--text:#1A1A1A;--text-sub:#555;--bg:#FFF;--bg-gray:#F7F9FC;--border:#DDE6EF;--radius:10px;--shadow:0 4px 24px rgba(13,43,78,.10);--shadow-lg:0 8px 40px rgba(13,43,78,.18);--max:1060px;--font:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.8;font-size:16px;}
+    a{color:var(--blue);text-decoration:none;}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+    .section{padding:88px 0;}
+    .section-gray{background:var(--bg-gray);}
+    .label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--teal);background:#E0F5F4;padding:4px 16px;border-radius:20px;margin-bottom:14px;}
+    .sec-title{font-size:clamp(24px,3.8vw,36px);font-weight:900;line-height:1.35;margin-bottom:14px;}
+    .sec-sub{font-size:15px;color:var(--text-sub);max-width:620px;line-height:1.9;}
+    .sec-head{text-align:center;margin-bottom:60px;}
+    .sec-head .sec-sub{margin:0 auto;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;transition:all .22s;text-decoration:none;border:none;}
+    .btn-accent{background:var(--accent2);color:#fff;box-shadow:0 4px 18px rgba(232,82,42,.35);}
+    .btn-accent:hover{background:#d04420;transform:translateY(-2px);}
+    .btn-white{background:#fff;color:var(--navy);box-shadow:0 4px 18px rgba(0,0,0,.14);}
+    .btn-white:hover{background:#f0f8ff;transform:translateY(-2px);}
+    .btn-teal{background:var(--teal);color:#fff;box-shadow:0 4px 18px rgba(10,123,116,.3);}
+    .btn-teal:hover{background:#086b65;transform:translateY(-2px);}
+
+    /* HEADER */
+    #hd{position:relative;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(13,43,78,.07);}
+    .hd-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 24px;}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .logo-icon{width:40px;height:40px;border-radius:8px;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .logo-icon svg{width:28px;height:28px;}
+    .logo-name{font-size:19px;font-weight:900;color:var(--navy);}
+    .logo-name span{color:var(--teal);}
+    .hd-nav{display:flex;align-items:center;gap:28px;}
+    .hd-nav a{font-size:14px;font-weight:500;color:var(--text);position:relative;padding-bottom:2px;}
+    .hd-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--teal);transition:width .2s;}
+    .hd-nav a:hover::after,.hd-nav a.active::after{width:100%;}
+    .hd-nav a.active{color:var(--teal);font-weight:700;}
+    .hd-cta{background:var(--accent2);color:#fff !important;padding:10px 22px;border-radius:50px;font-weight:700 !important;font-size:13px !important;box-shadow:0 3px 12px rgba(232,82,42,.32);transition:all .2s;}
+    .hd-cta::after{display:none !important;}
+    .hd-cta:hover{background:#c93d1e !important;transform:translateY(-1px);}
+
+    /* PAGE HERO */
+    .page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);padding:64px 0;text-align:center;color:#fff;}
+    .page-hero h1{font-size:clamp(26px,4vw,42px);font-weight:900;margin-bottom:12px;}
+    .page-hero p{font-size:15px;color:rgba(255,255,255,.8);max-width:540px;margin:0 auto;}
+
+    /* SERVICES */
+    .svc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .svc-card{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;}
+    .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+    .svc-head{padding:30px 26px 22px;color:#fff;}
+    .svc-it .svc-head{background:linear-gradient(135deg,#1A6FBB 0%,#3B9AE8 100%);}
+    .svc-dx .svc-head{background:linear-gradient(135deg,#0A7B74 0%,#12C5BB 100%);}
+    .svc-ai .svc-head{background:linear-gradient(135deg,#5B2D9E 0%,#9B59CF 100%);}
+    .svc-icon{font-size:34px;margin-bottom:12px;}
+    .svc-head h3{font-size:19px;font-weight:900;margin-bottom:8px;}
+    .svc-head p{font-size:13px;opacity:.85;line-height:1.7;}
+    .svc-body{padding:22px 26px;background:#fff;}
+    .svc-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:20px;}
+    .svc-list li{display:flex;gap:9px;font-size:14px;color:var(--text);line-height:1.6;}
+    .svc-it .svc-list li::before{content:'✓';color:var(--blue);font-weight:700;}
+    .svc-dx .svc-list li::before{content:'✓';color:var(--teal);font-weight:700;}
+    .svc-ai .svc-list li::before{content:'✓';color:#7B4CC5;font-weight:700;}
+    .svc-link{font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:5px;}
+    .svc-it .svc-link{color:var(--blue);}
+    .svc-dx .svc-link{color:var(--teal);}
+    .svc-ai .svc-link{color:#7B4CC5;}
+
+    /* REASONS */
+    .reason-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+    .reason-card{background:#fff;border-radius:16px;border:1px solid var(--border);padding:30px;display:flex;gap:18px;transition:box-shadow .2s;}
+    .reason-card:hover{box-shadow:var(--shadow);}
+    .reason-num{font-size:52px;font-weight:900;color:transparent;line-height:1;flex-shrink:0;width:60px;-webkit-text-stroke:2px var(--teal-light);}
+    .reason-body h3{font-size:16px;font-weight:700;margin-bottom:10px;}
+    .reason-body h3 em{color:var(--teal);font-style:normal;}
+    .reason-body p{font-size:14px;color:var(--text-sub);line-height:1.85;}
+
+    /* FLOW */
+    .flow-wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;}
+    .flow-wrap::before{content:'';position:absolute;top:34px;left:calc(10% + 24px);right:calc(10% + 24px);height:2px;background:var(--border);z-index:0;}
+    .flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px;position:relative;z-index:1;}
+    .flow-circle{width:68px;height:68px;border-radius:50%;border:3px solid var(--teal);background:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;box-shadow:0 3px 12px rgba(10,123,116,.18);}
+    .flow-step.active .flow-circle{background:var(--teal);}
+    .flow-badge{position:absolute;top:-6px;right:calc(50% - 40px);background:var(--accent2);color:#fff;font-size:10px;font-weight:700;padding:1px 8px;border-radius:10px;}
+    .flow-step h4{font-size:13px;font-weight:700;color:var(--teal);margin-bottom:5px;}
+    .flow-step p{font-size:11px;color:var(--text-sub);line-height:1.6;}
+
+    /* CTA */
+    #cta{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);padding:96px 0;text-align:center;}
+    #cta h2{font-size:clamp(24px,3.8vw,38px);font-weight:900;color:#fff;margin-bottom:14px;line-height:1.4;}
+    #cta p{font-size:16px;color:rgba(255,255,255,.82);max-width:520px;margin:0 auto 36px;line-height:1.9;}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .cta-note{margin-top:20px;font-size:13px;color:rgba(255,255,255,.65);}
+
+    /* FOOTER */
+    #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:52px 0 28px;}
+    .footer-top{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:36px;}
+    .footer-brand .logo-name{color:#fff;font-size:18px;}
+    .footer-brand .logo-name span{color:#6EFFF9;}
+    .footer-lead{font-size:13px;line-height:1.8;margin-top:14px;max-width:340px;}
+    .footer-info{margin-top:18px;font-size:13px;display:flex;flex-direction:column;gap:5px;}
+    .footer-info a{color:rgba(255,255,255,.75);}
+    .footer-nav{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+    .footer-nav a{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s;}
+    .footer-nav a:hover{color:#6EFFF9;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;font-size:12px;color:rgba(255,255,255,.45);}
+
+    @media(max-width:900px){
+      .svc-cards{grid-template-columns:1fr;}
+      .reason-grid{grid-template-columns:1fr;}
+      .footer-top{grid-template-columns:1fr;gap:24px;}
+      .footer-nav{align-items:flex-start;}
+      .flow-wrap{grid-template-columns:repeat(3,1fr);row-gap:28px;}
+      .flow-wrap::before{display:none;}
+    }
+    @media(max-width:600px){
+      .section{padding:60px 0;}
+      .hd-nav{display:none;}
+      .flow-wrap{grid-template-columns:repeat(2,1fr);}
+    }
+    .fi{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease;}
+    .fi.vis{opacity:1;transform:none;}
+    .fi-d1{transition-delay:.08s;}
+    .fi-d2{transition-delay:.16s;}
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hd">
+  <div class="hd-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 14 L13 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 10 L19 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="3" y="26" font-size="8" font-weight="900" fill="white" font-family="Arial">DX</text>
+        </svg>
+      </div>
+      <div class="logo-name">DX-<span>Consul</span></div>
+    </a>
+    <nav class="hd-nav">
+      <a href="index.html">ホーム</a>
+      <a href="service.html" class="active">サービス</a>
+      <a href="cases.html">ユースケース・FAQ</a>
+      <a href="contact.html" class="hd-cta">無料相談はこちら →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>サービス案内</h1>
+  <p>生成AI活用から、クラウド導入、DX伴走支援まで。貴社のステージに合ったサポートを提供します。</p>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="sec-head fi">
+      <div class="label">サービス紹介</div>
+      <h2 class="sec-title">3つのご支援メニュー</h2>
+      <p class="sec-sub">ITの基礎固めから、クラウド導入、生成AI活用まで。貴社のステージに合ったサポートを提供します。</p>
+    </div>
+    <div class="svc-cards">
+      <div class="svc-card svc-ai fi">
+        <div class="svc-head">
+          <div class="svc-icon">🤖</div>
+          <h3>生成AI活用・定着支援</h3>
+          <p>生成AIを活用し定型業務の自動化・新しいアイデアの創出を支援。社内研修で全社への定着をサポートします。</p>
+        </div>
+        <div class="svc-body">
+          <ul class="svc-list">
+            <li>業務別AI活用プラン策定</li>
+            <li>定型業務の自動化・効率化</li>
+            <li>プロンプト設計・社内研修</li>
+            <li>AIガイドライン・ルール策定</li>
+            <li>継続的な活用改善サポート</li>
+          </ul>
+          <a href="contact.html" class="svc-link">詳しく相談する →</a>
+        </div>
+      </div>
+      <div class="svc-card svc-it fi fi-d1">
+        <div class="svc-head">
+          <div class="svc-icon">☁️</div>
+          <h3>クラウド導入・活用支援</h3>
+          <p>Google Workspace・Microsoft 365等の選定から導入、社内研修までをワンストップで支援します。</p>
+        </div>
+        <div class="svc-body">
+          <ul class="svc-list">
+            <li>クラウドツール選定・比較提案</li>
+            <li>Google Workspace / M365 導入支援</li>
+            <li>社内研修・操作サポート</li>
+            <li>ベンダー折衝・窓口代行</li>
+            <li>導入後の運用・定着支援</li>
+          </ul>
+          <a href="contact.html" class="svc-link">詳しく相談する →</a>
+        </div>
+      </div>
+      <div class="svc-card svc-dx fi fi-d2">
+        <div class="svc-head">
+          <div class="svc-icon">📊</div>
+          <h3>DX伴走支援</h3>
+          <p>現状の業務課題を可視化し、あるべき姿へのロードマップを策定。経営層と現場の橋渡しを行います。</p>
+        </div>
+        <div class="svc-body">
+          <ul class="svc-list">
+            <li>DX現状診断・課題の可視化</li>
+            <li>DX戦略・ロードマップ策定</li>
+            <li>優先施策の選定・実行支援</li>
+            <li>経営層と現場の橋渡し</li>
+            <li>定期レビュー・軌道修正</li>
+          </ul>
+          <a href="contact.html" class="svc-link">詳しく相談する →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section id="reasons" class="section section-gray">
+  <div class="container">
+    <div class="sec-head fi">
+      <div class="label">選ばれる理由</div>
+      <h2 class="sec-title">DX-Consul が選ばれる理由</h2>
+    </div>
+    <div class="reason-grid fi">
+      <div class="reason-card">
+        <div class="reason-num">01</div>
+        <div class="reason-body">
+          <h3>最初から最後まで<em>一人の担当</em>が伴走</h3>
+          <p>提案書を渡して終わりという大手コンサルとは違います。ヒアリングから実行・定着まで、専任コンサルタントが一貫して責任を持って寄り添います。</p>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">02</div>
+        <div class="reason-body">
+          <h3><em>IT専任者不在</em>でも安心のサポート</h3>
+          <p>専門用語を使わず、経営者様・現場社員様に分かりやすい言葉でコミュニケーション。貴社の「社外IT部門」として並走します。</p>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">03</div>
+        <div class="reason-body">
+          <h3><em>生成AI活用</em>の豊富な専門知識</h3>
+          <p>ChatGPT / Claude / Microsoft Copilot など最新の生成AIを業務活用するための実践的な知識と支援実績を持ちます。</p>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">04</div>
+        <div class="reason-body">
+          <h3><em>スモールスタート</em>から着実に前進</h3>
+          <p>高額なシステム開発は不要。Google WorkspaceやSaaSなどの既存ツールを組み合わせた低コストで実用的な解決策を推奨します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow" class="section">
+  <div class="container">
+    <div class="sec-head fi">
+      <div class="label">ご相談の流れ</div>
+      <h2 class="sec-title">5ステップでスタート</h2>
+      <p class="sec-sub">お問い合わせから支援開始まで、スムーズにご案内します。</p>
+    </div>
+    <div class="flow-wrap fi">
+      <div class="flow-step active">
+        <div class="flow-circle">📩</div>
+        <div class="flow-badge">無料</div>
+        <h4>お問い合わせ</h4>
+        <p>フォームからお気軽にご連絡</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-circle">💬</div>
+        <div class="flow-badge">無料</div>
+        <h4>初回ヒアリング</h4>
+        <p>Zoom等で30〜60分</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-circle">📋</div>
+        <h4>課題整理・提案</h4>
+        <p>現状整理と最適プランをご提案</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-circle">✅</div>
+        <h4>ご契約</h4>
+        <p>内容・費用にご納得後スタート</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-circle">🚀</div>
+        <h4>伴走支援スタート</h4>
+        <p>定例MTGを軸に一緒に推進</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <h2>まずは無料でご相談ください</h2>
+    <p>「何が課題か分からない」という段階からで構いません。IT・DX・生成AIの活用について、どんな小さなお悩みもお気軽にお問い合わせください。</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-white">無料相談・お問い合わせ →</a>
+      <a href="tel:0988759530" class="btn btn-teal">📞 お電話でのご相談</a>
+    </div>
+    <p class="cta-note">✓ 初回相談 無料　✓ オンライン（Zoom）対応　✓ 全国対応</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 14 L13 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13 10 L19 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="3" y="26" font-size="8" font-weight="900" fill="white" font-family="Arial">DX</text>
+            </svg>
+          </div>
+          <div class="logo-name">DX-<span>Consul</span></div>
+        </div>
+        <p class="footer-lead">IT選任が不在でも大丈夫。デジタル経営をもっと身近に。中小企業・小規模事業者さまのDX化を支援します。</p>
+        <div class="footer-info">
+          <span>📍 〒901-2131 沖縄県浦添市牧港4-10</span>
+          <span>📞 098-875-9530</span>
+          <span>✉️ <a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a></span>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">ホーム</a>
+        <a href="service.html">サービス案内</a>
+        <a href="cases.html">コンサルティング事例</a>
+        <a href="cases.html#faq">よくある質問</a>
+        <a href="contact.html">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">Copyright 2026 DX-Consul All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);} });
+  }, {threshold:0.08});
+  document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

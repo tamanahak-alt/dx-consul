@@ -3,503 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- iFrame embed: Google Sites compatibility -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>DX-Consul｜中小企業のDX・IT・生成AI 伴走支援</title>
-  <meta name="description" content="IT担当不在でも大丈夫。中小企業の「紙とExcel」業務を、利益を生むデジタル経営へ。DX・IT活用・生成AI導入を丁寧な伴走支援でサポートします。初回相談無料。沖縄県浦添市。">
+  <meta name="description" content="IT選任が不在でも大丈夫。デジタル経営をもっと身近に。DX・IT活用・生成AI導入を丁寧な伴走支援でサポートします。初回相談無料。沖縄県浦添市。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    /* ===========================
-       Variables & Reset
-    =========================== */
     :root {
-      --navy:       #0D2B4E;
-      --teal:       #0A7B74;
-      --teal-light: #12A89E;
-      --blue:       #1A6FBB;
-      --blue-light: #E0F0FF;
-      --accent:     #F5A623;
-      --accent2:    #E8522A;
-      --text:       #1A1A1A;
-      --text-sub:   #555;
-      --bg:         #FFF;
-      --bg-gray:    #F7F9FC;
-      --border:     #DDE6EF;
-      --radius:     10px;
-      --shadow:     0 4px 24px rgba(13,43,78,.10);
-      --shadow-lg:  0 8px 40px rgba(13,43,78,.18);
-      --max:        1060px;
-      --font:       'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+      --navy:#0D2B4E; --teal:#0A7B74; --teal-light:#12A89E;
+      --blue:#1A6FBB; --blue-light:#E0F0FF; --accent:#F5A623; --accent2:#E8522A;
+      --text:#1A1A1A; --text-sub:#555; --bg:#FFF; --bg-gray:#F7F9FC;
+      --border:#DDE6EF; --radius:10px;
+      --shadow:0 4px 24px rgba(13,43,78,.10); --shadow-lg:0 8px 40px rgba(13,43,78,.18);
+      --max:1060px; --font:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.8; font-size: 16px; }
-    img { max-width: 100%; display: block; }
-    a { color: var(--blue); text-decoration: none; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.8;font-size:16px;}
+    img{max-width:100%;display:block;}
+    a{color:var(--blue);text-decoration:none;}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+    .section{padding:88px 0;}
+    .section-gray{background:var(--bg-gray);}
+    .label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--teal);background:#E0F5F4;padding:4px 16px;border-radius:20px;margin-bottom:14px;}
+    .sec-title{font-size:clamp(24px,3.8vw,36px);font-weight:900;line-height:1.35;margin-bottom:14px;}
+    .sec-sub{font-size:15px;color:var(--text-sub);max-width:620px;line-height:1.9;}
+    .sec-head{text-align:center;margin-bottom:60px;}
+    .sec-head .sec-sub{margin:0 auto;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;transition:all .22s;text-decoration:none;border:none;}
+    .btn-accent{background:var(--accent2);color:#fff;box-shadow:0 4px 18px rgba(232,82,42,.35);}
+    .btn-accent:hover{background:#d04420;transform:translateY(-2px);}
+    .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);}
+    .btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);}
+    .btn-white{background:#fff;color:var(--navy);box-shadow:0 4px 18px rgba(0,0,0,.14);}
+    .btn-white:hover{background:#f0f8ff;transform:translateY(-2px);}
+    .btn-teal{background:var(--teal);color:#fff;box-shadow:0 4px 18px rgba(10,123,116,.3);}
+    .btn-teal:hover{background:#086b65;transform:translateY(-2px);}
 
-    /* ===========================
-       Utility
-    =========================== */
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-    .section     { padding: 88px 0; }
-    .section-gray { background: var(--bg-gray); }
+    /* HEADER */
+    #hd{position:relative;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(13,43,78,.07);}
+    .hd-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 24px;}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .logo-icon{width:40px;height:40px;border-radius:8px;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .logo-icon svg{width:28px;height:28px;}
+    .logo-name{font-size:19px;font-weight:900;color:var(--navy);}
+    .logo-name span{color:var(--teal);}
+    .hd-nav{display:flex;align-items:center;gap:28px;}
+    .hd-nav a{font-size:14px;font-weight:500;color:var(--text);position:relative;padding-bottom:2px;}
+    .hd-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--teal);transition:width .2s;}
+    .hd-nav a:hover::after,.hd-nav a.active::after{width:100%;}
+    .hd-nav a.active{color:var(--teal);font-weight:700;}
+    .hd-cta{background:var(--accent2);color:#fff !important;padding:10px 22px;border-radius:50px;font-weight:700 !important;font-size:13px !important;box-shadow:0 3px 12px rgba(232,82,42,.32);transition:all .2s;}
+    .hd-cta::after{display:none !important;}
+    .hd-cta:hover{background:#c93d1e !important;transform:translateY(-1px);}
 
-    .label {
-      display: inline-block;
-      font-size: 12px; font-weight: 700; letter-spacing: .12em;
-      color: var(--teal); background: #E0F5F4;
-      padding: 4px 16px; border-radius: 20px; margin-bottom: 14px;
-    }
-    .sec-title {
-      font-size: clamp(24px, 3.8vw, 36px);
-      font-weight: 900; line-height: 1.35; margin-bottom: 14px;
-    }
-    .sec-sub {
-      font-size: 15px; color: var(--text-sub);
-      max-width: 620px; line-height: 1.9;
-    }
-    .sec-head { text-align: center; margin-bottom: 60px; }
-    .sec-head .sec-sub { margin: 0 auto; }
+    /* HERO */
+    #hero{background:linear-gradient(135deg,rgba(13,43,78,.90) 0%,rgba(10,123,116,.82) 100%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpolygon points='30,0 60,15 60,45 30,60 0,45 0,15' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'/%3E%3C/svg%3E");background-size:auto,60px 60px;padding:100px 0 88px;position:relative;overflow:hidden;}
+    #hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(18,168,158,.18) 0%,transparent 65%);pointer-events:none;}
+    .hero-inner{max-width:var(--max);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:center;position:relative;z-index:1;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;padding:6px 18px;border-radius:20px;margin-bottom:22px;}
+    .hero-badge::before{content:'●';color:#6EFFF9;font-size:8px;}
+    .hero-title{font-size:clamp(28px,4.5vw,50px);font-weight:900;color:#fff;line-height:1.25;margin-bottom:18px;}
+    .hero-title em{font-style:normal;color:#6EFFF9;}
+    .hero-sub{font-size:16px;color:rgba(255,255,255,.85);line-height:1.85;margin-bottom:10px;font-weight:500;}
+    .hero-lead{font-size:14px;color:rgba(255,255,255,.72);line-height:1.9;margin-bottom:36px;}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px;}
+    .hero-points{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.8);font-weight:500;}
+    .hero-points span::before{content:'✓ ';color:#6EFFF9;}
+    .hero-card{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:28px 24px;}
+    .hero-card-title{font-size:13px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.1em;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.15);}
+    .hc-item{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+    .hc-item:last-of-type{border-bottom:none;}
+    .hc-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+    .hci-it{background:rgba(26,111,187,.5);}
+    .hci-dx{background:rgba(10,123,116,.5);}
+    .hci-ai{background:rgba(139,76,245,.5);}
+    .hc-text h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;}
+    .hc-text p{font-size:12px;color:rgba(255,255,255,.65);line-height:1.6;}
+    .hero-card-cta{display:block;margin-top:18px;background:var(--accent2);border-radius:10px;padding:14px;text-align:center;color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:background .2s;text-decoration:none;}
+    .hero-card-cta:hover{background:#d04420;}
+    .hero-card-cta small{display:block;font-size:11px;font-weight:400;opacity:.8;margin-top:2px;}
 
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 15px 34px; border-radius: 50px;
-      font-weight: 700; font-size: 15px;
-      cursor: pointer; transition: all .22s; text-decoration: none; border: none;
-    }
-    .btn-accent {
-      background: var(--accent2); color: #fff;
-      box-shadow: 0 4px 18px rgba(232,82,42,.35);
-    }
-    .btn-accent:hover { background: #d04420; transform: translateY(-2px); box-shadow: 0 8px 26px rgba(232,82,42,.45); }
-    .btn-outline {
-      background: transparent; color: #fff;
-      border: 2px solid rgba(255,255,255,.7);
-    }
-    .btn-outline:hover { background: rgba(255,255,255,.12); transform: translateY(-2px); }
-    .btn-white {
-      background: #fff; color: var(--navy);
-      box-shadow: 0 4px 18px rgba(0,0,0,.14);
-    }
-    .btn-white:hover { background: #f0f8ff; transform: translateY(-2px); }
-    .btn-teal {
-      background: var(--teal); color: #fff;
-      box-shadow: 0 4px 18px rgba(10,123,116,.3);
-    }
-    .btn-teal:hover { background: #086b65; transform: translateY(-2px); }
+    /* TROUBLES */
+    .trouble-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .trouble-item{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:box-shadow .2s,border-color .2s;}
+    .trouble-item:hover{box-shadow:var(--shadow);border-color:var(--teal-light);}
+    .t-check{width:26px;height:26px;border-radius:50%;background:#E0F5F4;color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px;}
+    .t-text{font-size:14px;line-height:1.7;}
+    .trouble-resolve{margin-top:48px;background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);border-radius:16px;padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+    .trouble-resolve p{font-size:18px;font-weight:700;color:#fff;line-height:1.6;}
+    .trouble-resolve p span{color:#6EFFF9;}
 
-    /* ===========================
-       HEADER
-    =========================== */
-    #hd {
-      position: relative; top: 0; z-index: 100;
-      background: rgba(255,255,255,.97);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 2px 12px rgba(13,43,78,.07);
-    }
-    .hd-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 68px; max-width: var(--max); margin: 0 auto; padding: 0 24px;
-    }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-icon {
-      width: 40px; height: 40px; border-radius: 8px; overflow: hidden;
-      background: var(--navy); display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .logo-icon svg { width: 28px; height: 28px; }
-    .logo-name { font-size: 19px; font-weight: 900; color: var(--navy); letter-spacing: -.01em; }
-    .logo-name span { color: var(--teal); }
-    .hd-nav { display: flex; align-items: center; gap: 28px; }
-    .hd-nav a {
-      font-size: 14px; font-weight: 500; color: var(--text);
-      position: relative; padding-bottom: 2px;
-    }
-    .hd-nav a::after {
-      content: ''; position: absolute; bottom: -2px; left: 0;
-      width: 0; height: 2px; background: var(--teal); transition: width .2s;
-    }
-    .hd-nav a:hover::after { width: 100%; }
-    .hd-cta {
-      background: var(--accent2); color: #fff !important;
-      padding: 10px 22px; border-radius: 50px;
-      font-weight: 700 !important; font-size: 13px !important;
-      box-shadow: 0 3px 12px rgba(232,82,42,.32); transition: all .2s;
-    }
-    .hd-cta::after { display: none !important; }
-    .hd-cta:hover { background: #c93d1e !important; transform: translateY(-1px); }
+    /* MISSION */
+    .section-mission{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);color:#fff;text-align:center;padding:80px 0;}
+    .mission-inner{display:flex;flex-direction:column;align-items:center;gap:18px;}
+    .mission-deco{font-size:52px;}
+    .mission-title{font-size:clamp(22px,3.5vw,34px);font-weight:900;line-height:1.3;color:#fff;}
+    .mission-text{font-size:16px;line-height:2;color:rgba(255,255,255,.9);max-width:640px;}
 
-    /* ===========================
-       HERO
-    =========================== */
-    #hero {
-      background:
-        linear-gradient(135deg, rgba(13,43,78,.90) 0%, rgba(10,123,116,.82) 100%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpolygon points='30,0 60,15 60,45 30,60 0,45 0,15' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'/%3E%3C/svg%3E");
-      background-size: auto, 60px 60px;
-      padding: 100px 0 88px;
-      position: relative; overflow: hidden;
-    }
-    #hero::after {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(18,168,158,.18) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .hero-inner {
-      max-width: var(--max); margin: 0 auto; padding: 0 24px;
-      display: grid; grid-template-columns: 1fr 400px;
-      gap: 56px; align-items: center; position: relative; z-index: 1;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
-      color: #fff; font-size: 12px; font-weight: 700;
-      letter-spacing: .1em; padding: 6px 18px; border-radius: 20px; margin-bottom: 22px;
-    }
-    .hero-badge::before { content: '●'; color: #6EFFF9; font-size: 8px; }
-    .hero-title {
-      font-size: clamp(28px, 4.5vw, 50px);
-      font-weight: 900; color: #fff; line-height: 1.25; margin-bottom: 18px;
-    }
-    .hero-title em { font-style: normal; color: #6EFFF9; }
-    .hero-sub { font-size: 16px; color: rgba(255,255,255,.85); line-height: 1.85; margin-bottom: 10px; font-weight: 500; }
-    .hero-lead { font-size: 14px; color: rgba(255,255,255,.72); line-height: 1.9; margin-bottom: 36px; }
-    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
-    .hero-points { display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,.8); font-weight: 500; }
-    .hero-points span::before { content: '✓ '; color: #6EFFF9; }
+    /* FOOTER */
+    #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:52px 0 28px;}
+    .footer-top{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:36px;}
+    .footer-brand .logo-name{color:#fff;font-size:18px;}
+    .footer-brand .logo-name span{color:#6EFFF9;}
+    .footer-lead{font-size:13px;line-height:1.8;margin-top:14px;max-width:340px;}
+    .footer-info{margin-top:18px;font-size:13px;display:flex;flex-direction:column;gap:5px;}
+    .footer-info a{color:rgba(255,255,255,.75);}
+    .footer-nav{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+    .footer-nav a{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s;}
+    .footer-nav a:hover{color:#6EFFF9;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;font-size:12px;color:rgba(255,255,255,.45);}
 
-    .hero-card {
-      background: rgba(255,255,255,.1); backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,.2); border-radius: 18px; padding: 28px 24px;
+    @media(max-width:900px){
+      .hero-inner{grid-template-columns:1fr;gap:36px;}
+      .footer-top{grid-template-columns:1fr;gap:24px;}
+      .footer-nav{align-items:flex-start;}
+      .trouble-grid{grid-template-columns:1fr 1fr;}
+      .trouble-resolve{flex-direction:column;text-align:center;}
     }
-    .hero-card-title {
-      font-size: 13px; font-weight: 700; color: rgba(255,255,255,.7);
-      letter-spacing: .1em; margin-bottom: 18px; padding-bottom: 12px;
-      border-bottom: 1px solid rgba(255,255,255,.15);
+    @media(max-width:600px){
+      .section{padding:60px 0;}
+      .trouble-grid{grid-template-columns:1fr;}
+      .hero-btns{flex-direction:column;}
+      .hd-nav{display:none;}
     }
-    .hc-item {
-      display: flex; align-items: flex-start; gap: 14px;
-      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .hc-item:last-of-type { border-bottom: none; }
-    .hc-icon {
-      width: 42px; height: 42px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; flex-shrink: 0;
-    }
-    .hci-it { background: rgba(26,111,187,.5); }
-    .hci-dx { background: rgba(10,123,116,.5); }
-    .hci-ai { background: rgba(139,76,245,.5); }
-    .hc-text h4 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 3px; }
-    .hc-text p  { font-size: 12px; color: rgba(255,255,255,.65); line-height: 1.6; }
-    .hero-card-cta {
-      display: block; margin-top: 18px; background: var(--accent2);
-      border-radius: 10px; padding: 14px; text-align: center;
-      color: #fff; font-size: 14px; font-weight: 700; cursor: pointer;
-      transition: background .2s; text-decoration: none;
-    }
-    .hero-card-cta:hover { background: #d04420; }
-    .hero-card-cta small { display: block; font-size: 11px; font-weight: 400; opacity: .8; margin-top: 2px; }
-
-    /* ===========================
-       TROUBLES
-    =========================== */
-    .trouble-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-    }
-    .trouble-item {
-      display: flex; align-items: flex-start; gap: 12px;
-      background: #fff; border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 18px;
-      transition: box-shadow .2s, border-color .2s;
-    }
-    .trouble-item:hover { box-shadow: var(--shadow); border-color: var(--teal-light); }
-    .t-check {
-      width: 26px; height: 26px; border-radius: 50%;
-      background: #E0F5F4; color: var(--teal);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
-    }
-    .t-text { font-size: 14px; line-height: 1.7; }
-    .trouble-resolve {
-      margin-top: 48px;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
-      border-radius: 16px; padding: 32px 40px;
-      display: flex; align-items: center; justify-content: space-between; gap: 24px;
-    }
-    .trouble-resolve p { font-size: 18px; font-weight: 700; color: #fff; line-height: 1.6; }
-    .trouble-resolve p span { color: #6EFFF9; }
-
-    /* ===========================
-       SERVICES
-    =========================== */
-    .svc-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .svc-card {
-      border-radius: 16px; overflow: hidden; border: 1px solid var(--border);
-      box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s;
-    }
-    .svc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-    .svc-head { padding: 30px 26px 22px; color: #fff; }
-    .svc-it .svc-head { background: linear-gradient(135deg, #1A6FBB 0%, #3B9AE8 100%); }
-    .svc-dx .svc-head { background: linear-gradient(135deg, #0A7B74 0%, #12C5BB 100%); }
-    .svc-ai .svc-head { background: linear-gradient(135deg, #5B2D9E 0%, #9B59CF 100%); }
-    .svc-icon { font-size: 34px; margin-bottom: 12px; }
-    .svc-head h3 { font-size: 19px; font-weight: 900; margin-bottom: 8px; }
-    .svc-head p  { font-size: 13px; opacity: .85; line-height: 1.7; }
-    .svc-body { padding: 22px 26px; background: #fff; }
-    .svc-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 20px; }
-    .svc-list li { display: flex; gap: 9px; font-size: 14px; color: var(--text); line-height: 1.6; }
-    .svc-it .svc-list li::before { content: '✓'; color: var(--blue);  font-weight: 700; }
-    .svc-dx .svc-list li::before { content: '✓'; color: var(--teal);  font-weight: 700; }
-    .svc-ai .svc-list li::before { content: '✓'; color: #7B4CC5; font-weight: 700; }
-    .svc-link { font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; }
-    .svc-it .svc-link { color: var(--blue); }
-    .svc-dx .svc-link { color: var(--teal); }
-    .svc-ai .svc-link { color: #7B4CC5; }
-
-    /* ===========================
-       REASONS
-    =========================== */
-    .reason-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-    .reason-card {
-      background: #fff; border-radius: 16px;
-      border: 1px solid var(--border); padding: 30px;
-      display: flex; gap: 18px; transition: box-shadow .2s;
-    }
-    .reason-card:hover { box-shadow: var(--shadow); }
-    .reason-num {
-      font-size: 52px; font-weight: 900; color: transparent; line-height: 1;
-      flex-shrink: 0; width: 60px;
-      -webkit-text-stroke: 2px var(--teal-light);
-    }
-    .reason-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
-    .reason-body h3 em { color: var(--teal); font-style: normal; }
-    .reason-body p  { font-size: 14px; color: var(--text-sub); line-height: 1.85; }
-
-    /* ===========================
-       FLOW
-    =========================== */
-    .flow-wrap {
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      gap: 0; position: relative;
-    }
-    .flow-wrap::before {
-      content: ''; position: absolute;
-      top: 34px; left: calc(10% + 24px); right: calc(10% + 24px);
-      height: 2px; background: var(--border); z-index: 0;
-    }
-    .flow-step {
-      display: flex; flex-direction: column;
-      align-items: center; text-align: center;
-      padding: 0 6px; position: relative; z-index: 1;
-    }
-    .flow-circle {
-      width: 68px; height: 68px; border-radius: 50%;
-      border: 3px solid var(--teal); background: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; margin-bottom: 14px;
-      box-shadow: 0 3px 12px rgba(10,123,116,.18);
-    }
-    .flow-step.active .flow-circle { background: var(--teal); }
-    .flow-badge {
-      position: absolute; top: -6px; right: calc(50% - 40px);
-      background: var(--accent2); color: #fff;
-      font-size: 10px; font-weight: 700; padding: 1px 8px; border-radius: 10px;
-    }
-    .flow-step h4 { font-size: 13px; font-weight: 700; color: var(--teal); margin-bottom: 5px; }
-    .flow-step p  { font-size: 11px; color: var(--text-sub); line-height: 1.6; }
-
-    /* ===========================
-       MISSION
-    =========================== */
-    .section-mission {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
-      color: #fff;
-      text-align: center;
-      padding: 80px 0;
-    }
-    .mission-inner { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-    .mission-deco { font-size: 52px; }
-    .mission-title {
-      font-size: clamp(22px, 3.5vw, 34px);
-      font-weight: 900; line-height: 1.3; color: #fff;
-    }
-    .mission-text {
-      font-size: 16px; line-height: 2; color: rgba(255,255,255,.9);
-      max-width: 640px;
-    }
-
-    /* ===========================
-       EXAMPLE
-    =========================== */
-    .ex-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-    .ex-card {
-      background: #fff; border-radius: 14px; border: 1px solid var(--border);
-      box-shadow: var(--shadow); overflow: hidden;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .ex-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .ex-head {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
-      padding: 20px 22px; color: #fff;
-    }
-    .ex-tag {
-      display: inline-block; font-size: 11px; font-weight: 700;
-      background: rgba(255,255,255,.2); padding: 3px 10px;
-      border-radius: 10px; margin-bottom: 8px;
-    }
-    .ex-head h3 { font-size: 15px; font-weight: 700; line-height: 1.5; }
-    .ex-body { padding: 20px 22px; }
-    .ex-row { display: flex; gap: 8px; margin-bottom: 10px; font-size: 13px; }
-    .ex-row-label { flex-shrink: 0; width: 48px; font-weight: 700; color: var(--teal); font-size: 12px; }
-    .ex-row-val { color: var(--text); line-height: 1.7; }
-    .ex-result {
-      margin-top: 14px; padding: 12px;
-      background: #E0F5F4; border-radius: 8px;
-      font-size: 13px; color: var(--teal); font-weight: 700;
-    }
-    .ex-note { font-size: 12px; color: var(--text-sub); text-align: center; margin-top: 28px; font-style: italic; }
-    .ex-desc { font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 14px; }
-    .ex-points { display: flex; flex-direction: column; gap: 8px; }
-    .ex-pt {
-      font-size: 13px; font-weight: 600; color: var(--teal);
-      background: #E0F5F4; border-radius: 8px; padding: 8px 12px;
-    }
-
-    /* ===========================
-       FAQ
-    =========================== */
-    .faq-list { max-width: 740px; margin: 0 auto; }
-    .faq-item {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: var(--radius); margin-bottom: 12px; overflow: hidden;
-    }
-    .faq-q {
-      display: flex; align-items: flex-start; gap: 14px;
-      padding: 19px 22px; cursor: pointer; font-weight: 700; font-size: 15px;
-      transition: background .18s;
-    }
-    .faq-q:hover { background: var(--bg-gray); }
-    .faq-qm {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--teal); color: #fff; font-size: 14px; font-weight: 900;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .faq-qt { flex: 1; line-height: 1.6; }
-    .faq-arr { font-size: 12px; color: var(--text-sub); transition: transform .28s; align-self: center; flex-shrink: 0; }
-    .faq-item.open .faq-arr { transform: rotate(180deg); }
-    .faq-a {
-      display: none; padding: 4px 22px 20px calc(22px + 28px + 14px);
-      font-size: 14px; color: var(--text-sub); line-height: 1.9;
-      background: #FAFCFF; border-top: 1px solid var(--border);
-    }
-    .faq-am { font-weight: 700; color: var(--accent2); margin-right: 4px; }
-    .faq-item.open .faq-a { display: block; }
-
-    /* ===========================
-       CTA
-    =========================== */
-    #cta {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
-      padding: 96px 0; text-align: center; position: relative; overflow: hidden;
-    }
-    #cta::before {
-      content: ''; position: absolute; top: -80px; right: -80px;
-      width: 360px; height: 360px; border-radius: 50%; background: rgba(255,255,255,.05);
-    }
-    #cta h2 {
-      font-size: clamp(24px, 3.8vw, 38px); font-weight: 900;
-      color: #fff; margin-bottom: 14px; line-height: 1.4;
-    }
-    #cta p { font-size: 16px; color: rgba(255,255,255,.82); max-width: 520px; margin: 0 auto 36px; line-height: 1.9; }
-    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .cta-note { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.65); }
-
-    /* ===========================
-       CONTACT
-    =========================== */
-    .contact-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; }
-    .contact-info h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
-    .contact-info p { font-size: 15px; color: var(--text-sub); line-height: 1.9; margin-bottom: 24px; }
-    .contact-detail { display: flex; flex-direction: column; gap: 12px; }
-    .cd-item { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text); }
-    .cd-icon {
-      width: 36px; height: 36px; border-radius: 8px;
-      background: var(--bg-gray); display: flex; align-items: center;
-      justify-content: center; font-size: 16px; flex-shrink: 0;
-    }
-    .cd-label { font-size: 11px; color: var(--text-sub); margin-bottom: 1px; }
-    .cd-val { font-weight: 600; }
-    .contact-form-box {
-      background: var(--bg-gray); border: 2px dashed var(--border);
-      border-radius: 16px; padding: 40px 28px; text-align: center; color: var(--text-sub);
-    }
-    .contact-form-box .cf-icon { font-size: 40px; margin-bottom: 14px; }
-    .contact-form-box h4 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
-    .contact-form-box p { font-size: 13px; line-height: 1.8; }
-    .contact-privacy {
-      margin-top: 20px; padding: 14px 18px;
-      background: var(--blue-light); border-radius: 8px;
-      font-size: 12px; color: var(--text-sub); line-height: 1.8;
-    }
-
-    /* ===========================
-       FOOTER
-    =========================== */
-    #footer { background: var(--navy); color: rgba(255,255,255,.75); padding: 52px 0 28px; }
-    .footer-top { display: grid; grid-template-columns: 1fr auto; gap: 48px; margin-bottom: 36px; }
-    .footer-brand .logo-name { color: #fff; font-size: 18px; }
-    .footer-brand .logo-name span { color: #6EFFF9; }
-    .footer-lead { font-size: 13px; line-height: 1.8; margin-top: 14px; max-width: 340px; }
-    .footer-info { margin-top: 18px; font-size: 13px; display: flex; flex-direction: column; gap: 5px; }
-    .footer-info a { color: rgba(255,255,255,.75); }
-    .footer-nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
-    .footer-nav a { font-size: 14px; color: rgba(255,255,255,.7); transition: color .2s; }
-    .footer-nav a:hover { color: #6EFFF9; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px;
-      text-align: center; font-size: 12px; color: rgba(255,255,255,.45);
-    }
-
-    /* ===========================
-       Responsive
-    =========================== */
-    @media (max-width: 900px) {
-      .hero-inner      { grid-template-columns: 1fr; gap: 36px; }
-      .svc-cards       { grid-template-columns: 1fr; }
-      .ex-grid         { grid-template-columns: 1fr; }
-      .reason-grid     { grid-template-columns: 1fr; }
-      .contact-inner   { grid-template-columns: 1fr; }
-      .footer-top      { grid-template-columns: 1fr; gap: 24px; }
-      .footer-nav      { align-items: flex-start; }
-      .flow-wrap       { grid-template-columns: repeat(3, 1fr); row-gap: 28px; }
-      .flow-wrap::before { display: none; }
-      .trouble-grid    { grid-template-columns: 1fr 1fr; }
-      .trouble-resolve { flex-direction: column; text-align: center; }
-    }
-    @media (max-width: 600px) {
-      .section { padding: 60px 0; }
-      .trouble-grid { grid-template-columns: 1fr; }
-      .hero-btns    { flex-direction: column; }
-      .hd-nav       { display: none; }
-      .flow-wrap    { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* Scroll fade-in */
-    .fi { opacity: 0; transform: translateY(22px); transition: opacity .5s ease, transform .5s ease; }
-    .fi.vis { opacity: 1; transform: none; }
-    .fi-d1 { transition-delay: .08s; }
-    .fi-d2 { transition-delay: .16s; }
-    .fi-d3 { transition-delay: .24s; }
+    .fi{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease;}
+    .fi.vis{opacity:1;transform:none;}
+    .fi-d1{transition-delay:.08s;}
+    .fi-d2{transition-delay:.16s;}
   </style>
 </head>
 <body>
 
-<!-- ===================== HEADER ===================== -->
+<!-- HEADER -->
 <header id="hd">
   <div class="hd-inner">
-    <a class="logo" href="#top">
+    <a class="logo" href="index.html">
       <div class="logo-icon">
         <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9 14 L13 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -510,32 +148,30 @@
       <div class="logo-name">DX-<span>Consul</span></div>
     </a>
     <nav class="hd-nav">
-      <a href="#services">サービス</a>
-      <a href="#reasons">選ばれる理由</a>
-      <a href="#example">導入事例</a>
-      <a href="#faq">よくある質問</a>
-      <a href="#contact" class="hd-cta">無料相談はこちら →</a>
+      <a href="index.html" class="active">ホーム</a>
+      <a href="service.html">サービス</a>
+      <a href="cases.html">ユースケース・FAQ</a>
+      <a href="contact.html" class="hd-cta">無料相談はこちら →</a>
     </nav>
   </div>
 </header>
 
-<!-- ===================== HERO ===================== -->
+<!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
     <div>
       <div class="hero-badge">初回相談 無料　|　中小企業・小規模事業者 専門</div>
       <h1 class="hero-title">
-        <em>IT担当不在</em>でも<br>大丈夫。<br>
-        「紙とExcel」業務を<br>
-        <em>デジタル経営</em>へ。
+        <em>IT選任が不在</em>でも<br>大丈夫、<br>
+        <em>デジタル経営</em>をもっと<br>身近に。
       </h1>
       <p class="hero-sub">DX-Consulは、中小企業および小規模事業者さまの<br>DX化を促進し、競争力強化を支援します。</p>
       <p class="hero-lead">
-        ITツールが定着しない、DXの進め方が分からない、生成AIを業務に活かしたい——。そんなお悩みを、経験豊富なコンサルタントが一緒に考え、一緒に動く伴走型で解決します。
+        生成AIを業務に活かしたい、ITツールが定着しない、DXの進め方が分からない——。そんなお悩みを、経験豊富なコンサルタントが一緒に考え、一緒に動く伴走型で解決します。
       </p>
       <div class="hero-btns">
-        <a href="#contact" class="btn btn-accent">無料相談はこちら →</a>
-        <a href="#services" class="btn btn-outline">サービスを見る</a>
+        <a href="contact.html" class="btn btn-accent">無料相談はこちら →</a>
+        <a href="service.html" class="btn btn-outline">サービスを見る</a>
       </div>
       <div class="hero-points">
         <span>初回相談 無料</span>
@@ -546,10 +182,10 @@
     <div class="hero-card fi">
       <div class="hero-card-title">▸ 3つのご支援メニュー</div>
       <div class="hc-item">
-        <div class="hc-icon hci-dx">📊</div>
+        <div class="hc-icon hci-ai">🤖</div>
         <div class="hc-text">
-          <h4>DX戦略コンサルティング</h4>
-          <p>課題を可視化しロードマップを策定</p>
+          <h4>生成AI活用・定着支援</h4>
+          <p>業務自動化と社内研修で全社に定着</p>
         </div>
       </div>
       <div class="hc-item">
@@ -560,126 +196,61 @@
         </div>
       </div>
       <div class="hc-item">
-        <div class="hc-icon hci-ai">🤖</div>
+        <div class="hc-icon hci-dx">📊</div>
         <div class="hc-text">
-          <h4>生成AI活用・定着支援</h4>
-          <p>業務自動化と社内研修で全社に定着</p>
+          <h4>DX伴走支援</h4>
+          <p>課題を可視化しロードマップを策定</p>
         </div>
       </div>
-      <a href="#contact" class="hero-card-cta">
-        まず無料でご相談ください
-        <small>お気軽にお問い合わせいただけます</small>
+      <a href="contact.html" class="hero-card-cta">
+        無料相談・お問い合わせ
+        <small>まずはお気軽にどうぞ</small>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ===================== TROUBLES ===================== -->
+<!-- TROUBLES -->
 <section id="troubles" class="section section-gray">
   <div class="container">
     <div class="sec-head fi">
-      <div class="label">よくあるお悩み</div>
-      <h2 class="sec-title">こんなお悩みはありませんか？</h2>
-      <p class="sec-sub">多くの中小企業・小規模事業者様から寄せられるお声です。どれか一つでも当てはまる方はお気軽にご相談ください。</p>
+      <div class="label">こんなお悩みはありませんか？</div>
+      <h2 class="sec-title">中小企業が抱えるDX・IT化の壁</h2>
     </div>
     <div class="trouble-grid fi">
       <div class="trouble-item">
         <div class="t-check">✓</div>
-        <p class="t-text">ITツールを導入したが、現場でほとんど使われていない</p>
+        <p class="t-text">生成AIを導入したいが何から始めればいいか分からない</p>
       </div>
       <div class="trouble-item">
         <div class="t-check">✓</div>
-        <p class="t-text">「DXを推進せよ」と言われるが、何から手をつければいいか分からない</p>
+        <p class="t-text">社内にIT専任担当がおらず、ツール選定・導入が進まない</p>
       </div>
       <div class="trouble-item">
         <div class="t-check">✓</div>
-        <p class="t-text">ChatGPT・生成AIを業務に活かしたいが、社内に詳しい人がいない</p>
+        <p class="t-text">DX化が必要とは分かっているが、何から手をつければいいか分からない</p>
       </div>
       <div class="trouble-item">
         <div class="t-check">✓</div>
-        <p class="t-text">社内にIT専任担当者がおらず、相談できる人がいない</p>
+        <p class="t-text">ITツールを導入しても現場に定着しない</p>
       </div>
       <div class="trouble-item">
         <div class="t-check">✓</div>
-        <p class="t-text">大手コンサルは費用が高く、中小企業には敷居が高い</p>
+        <p class="t-text">紙・Excelが中心で、業務の非効率が続いている</p>
       </div>
-      <div class="trouble-item">
+      <div class="trouble-item fi-d1">
         <div class="t-check">✓</div>
-        <p class="t-text">紙やExcel業務をデジタル化したいが、何をすれば良いか分からない</p>
+        <p class="t-text">コンサルに相談したいが、大手は費用が高くて頼みにくい</p>
       </div>
     </div>
     <div class="trouble-resolve fi">
       <p>そのお悩み、<span>DX-Consul</span>が<br>一緒に解決します。</p>
-      <a href="#contact" class="btn btn-white" style="white-space:nowrap;">無料で相談する →</a>
+      <a href="contact.html" class="btn btn-white">無料で相談してみる →</a>
     </div>
   </div>
 </section>
 
-<!-- ===================== SERVICES ===================== -->
-<section id="services" class="section">
-  <div class="container">
-    <div class="sec-head fi">
-      <div class="label">サービス紹介</div>
-      <h2 class="sec-title">3つのご支援メニュー</h2>
-      <p class="sec-sub">ITの基礎固めから、DX戦略の立案・実行、生成AI活用まで。貴社のステージに合ったサポートを提供します。</p>
-    </div>
-    <div class="svc-cards">
-      <div class="svc-card svc-dx fi">
-        <div class="svc-head">
-          <div class="svc-icon">📊</div>
-          <h3>DX戦略コンサルティング</h3>
-          <p>現状の業務課題を可視化し、あるべき姿へのロードマップを策定。経営層と現場の橋渡しを行います。</p>
-        </div>
-        <div class="svc-body">
-          <ul class="svc-list">
-            <li>DX現状診断・課題の可視化</li>
-            <li>DX戦略・ロードマップ策定</li>
-            <li>優先施策の選定・実行支援</li>
-            <li>経営層と現場の橋渡し</li>
-            <li>定期レビュー・軌道修正</li>
-          </ul>
-          <a href="#contact" class="svc-link">詳しく相談する →</a>
-        </div>
-      </div>
-      <div class="svc-card svc-it fi fi-d1">
-        <div class="svc-head">
-          <div class="svc-icon">☁️</div>
-          <h3>クラウド導入・活用支援</h3>
-          <p>Google Workspace・Microsoft 365等の選定から導入、社内研修までをワンストップで支援します。</p>
-        </div>
-        <div class="svc-body">
-          <ul class="svc-list">
-            <li>クラウドツール選定・比較提案</li>
-            <li>Google Workspace / M365 導入支援</li>
-            <li>社内研修・操作サポート</li>
-            <li>ベンダー折衝・窓口代行</li>
-            <li>導入後の運用・定着支援</li>
-          </ul>
-          <a href="#contact" class="svc-link">詳しく相談する →</a>
-        </div>
-      </div>
-      <div class="svc-card svc-ai fi fi-d2">
-        <div class="svc-head">
-          <div class="svc-icon">🤖</div>
-          <h3>生成AI活用・定着支援</h3>
-          <p>生成AIを活用し定型業務の自動化・新しいアイデアの創出を支援。社内研修で全社への定着をサポートします。</p>
-        </div>
-        <div class="svc-body">
-          <ul class="svc-list">
-            <li>業務別AI活用プラン策定</li>
-            <li>定型業務の自動化・効率化</li>
-            <li>プロンプト設計・社内研修</li>
-            <li>AIガイドライン・ルール策定</li>
-            <li>継続的な活用改善サポート</li>
-          </ul>
-          <a href="#contact" class="svc-link">詳しく相談する →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== MISSION ===================== -->
+<!-- MISSION -->
 <section id="mission" class="section section-mission">
   <div class="container">
     <div class="mission-inner fi">
@@ -690,282 +261,12 @@
         DXコンサルは、中小企業および小規模事業者さまのDX促進のために生まれました。<br>
         DXを活用して競争力強化のお手伝いをさせていただきます。
       </p>
-      <a href="#contact" class="btn btn-white" style="margin-top:12px;">まずは無料でご相談ください →</a>
+      <a href="contact.html" class="btn btn-white" style="margin-top:12px;">まずは無料でご相談ください →</a>
     </div>
   </div>
 </section>
 
-<!-- ===================== REASONS ===================== -->
-<section id="reasons" class="section section-gray">
-  <div class="container">
-    <div class="sec-head fi">
-      <div class="label">選ばれる理由</div>
-      <h2 class="sec-title">DX-Consul が選ばれる理由</h2>
-    </div>
-    <div class="reason-grid fi">
-      <div class="reason-card">
-        <div class="reason-num">01</div>
-        <div class="reason-body">
-          <h3>最初から最後まで<em>一人の担当</em>が伴走</h3>
-          <p>提案書を渡して終わりという大手コンサルとは違います。ヒアリングから実行・定着まで、専任コンサルタントが一貫して責任を持って寄り添います。</p>
-        </div>
-      </div>
-      <div class="reason-card">
-        <div class="reason-num">02</div>
-        <div class="reason-body">
-          <h3><em>IT専任者不在</em>でも安心のサポート</h3>
-          <p>専門用語を使わず、経営者様・現場社員様に分かりやすい言葉でコミュニケーション。貴社の「社外IT部門」として並走します。</p>
-        </div>
-      </div>
-      <div class="reason-card">
-        <div class="reason-num">03</div>
-        <div class="reason-body">
-          <h3><em>生成AI活用</em>の豊富な専門知識</h3>
-          <p>ChatGPT / Claude / Microsoft Copilot など最新の生成AIを業務活用するための実践的な知識と支援実績を持ちます。</p>
-        </div>
-      </div>
-      <div class="reason-card">
-        <div class="reason-num">04</div>
-        <div class="reason-body">
-          <h3><em>スモールスタート</em>から着実に前進</h3>
-          <p>高額なシステム開発は不要。Google WorkspaceやSaaSなどの既存ツールを組み合わせた低コストで実用的な解決策を推奨します。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FLOW ===================== -->
-<section id="flow" class="section">
-  <div class="container">
-    <div class="sec-head fi">
-      <div class="label">ご相談の流れ</div>
-      <h2 class="sec-title">5ステップでスタート</h2>
-      <p class="sec-sub">お問い合わせから支援開始まで、スムーズにご案内します。</p>
-    </div>
-    <div class="flow-wrap fi">
-      <div class="flow-step active">
-        <div class="flow-circle">📩</div>
-        <div class="flow-badge">無料</div>
-        <h4>お問い合わせ</h4>
-        <p>フォームからお気軽にご連絡</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-circle">💬</div>
-        <div class="flow-badge">無料</div>
-        <h4>初回ヒアリング</h4>
-        <p>Zoom等で30〜60分</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-circle">📋</div>
-        <h4>課題整理・提案</h4>
-        <p>現状整理と最適プランをご提案</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-circle">✅</div>
-        <h4>ご契約</h4>
-        <p>内容・費用にご納得後スタート</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-circle">🚀</div>
-        <h4>伴走支援スタート</h4>
-        <p>定例MTGを軸に一緒に推進</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== EXAMPLE ===================== -->
-<section id="example" class="section section-gray">
-  <div class="container">
-    <div class="sec-head fi">
-      <div class="label">コンサルティング事例</div>
-      <h2 class="sec-title">支援実績・事例紹介</h2>
-      <p class="sec-sub">建設業・製造業・ベンチャーまで、業種を問わずDX推進をお手伝いしています。</p>
-    </div>
-    <div class="ex-grid fi">
-      <div class="ex-card">
-        <div class="ex-head">
-          <span class="ex-tag">建設業</span>
-          <h3>建設業向けコンサルティング</h3>
-        </div>
-        <div class="ex-body">
-          <p class="ex-desc">建設業とIT・DXは関係性が薄いものと考えがちです。しかし、実際には建設現場でもDX強化による競争力強化は十分に可能です。</p>
-          <div class="ex-points">
-            <div class="ex-pt">📋 現場報告・工程管理のデジタル化</div>
-            <div class="ex-pt">📱 スマートフォン活用による業務効率化</div>
-            <div class="ex-pt">📊 コスト削減・生産性向上の実現</div>
-          </div>
-        </div>
-      </div>
-      <div class="ex-card fi-d1">
-        <div class="ex-head">
-          <span class="ex-tag">食品製造業</span>
-          <h3>食品製造業向けコンサルティング</h3>
-        </div>
-        <div class="ex-body">
-          <p class="ex-desc">クライアント様とITベンダーとの間を取り持ち、スムーズなベンダー・システム選定、導入、運用支援を実施します。</p>
-          <div class="ex-points">
-            <div class="ex-pt">🤝 ベンダー選定・折衝の代行</div>
-            <div class="ex-pt">🏭 製造ラインへのシステム導入支援</div>
-            <div class="ex-pt">🔄 導入後の運用定着までサポート</div>
-          </div>
-        </div>
-      </div>
-      <div class="ex-card fi-d1">
-        <div class="ex-head">
-          <span class="ex-tag">建機販売業</span>
-          <h3>建機販売業向けコンサルティング</h3>
-        </div>
-        <div class="ex-body">
-          <p class="ex-desc">販売のみならず保守・修理・レンタルなど建機の様々なケアが必要です。これらをDXがトータルでサポートします。</p>
-          <div class="ex-points">
-            <div class="ex-pt">🔧 保守・修理管理のDX化</div>
-            <div class="ex-pt">📦 レンタル在庫・予約管理の効率化</div>
-            <div class="ex-pt">🚀 顧客対応スピードの向上</div>
-          </div>
-        </div>
-      </div>
-      <div class="ex-card fi-d2">
-        <div class="ex-head">
-          <span class="ex-tag">ベンチャー企業</span>
-          <h3>ベンチャー企業向けコンサルティング</h3>
-        </div>
-        <div class="ex-body">
-          <p class="ex-desc">ベンチャー企業、特に創業期の経営者は孤独です。やること・考えることが多岐にわたりますが、あらゆる面でサポートします。</p>
-          <div class="ex-points">
-            <div class="ex-pt">💡 IT基盤の整備・ツール選定</div>
-            <div class="ex-pt">📈 業務プロセスの設計・自動化</div>
-            <div class="ex-pt">🤝 経営者の伴走パートナーとして支援</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="ex-note">※ 掲載はクライアント様のご了承のもと、一部情報を変更しています。</p>
-  </div>
-</section>
-
-<!-- ===================== FAQ ===================== -->
-<section id="faq" class="section">
-  <div class="container">
-    <div class="sec-head fi">
-      <div class="label">よくある質問</div>
-      <h2 class="sec-title">FAQ</h2>
-    </div>
-    <div class="faq-list fi">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-qm">Q</div>
-          <div class="faq-qt">社内にIT専門の担当者がいないのですが、依頼しても大丈夫でしょうか？</div>
-          <div class="faq-arr">▼</div>
-        </div>
-        <div class="faq-a"><span class="faq-am">A.</span>はい、全く問題ありません。むしろ、IT専任者がいない企業様こそ、私たちのサポートが最も効果を発揮します。専門用語を使わず、経営者様や現場の社員様に分かりやすい言葉でコミュニケーションを取りながら、貴社の「IT部門」代わりとして並走いたします。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-qm">Q</div>
-          <div class="faq-qt">従業員数名の小さな会社ですが、対応してもらえますか？</div>
-          <div class="faq-arr">▼</div>
-        </div>
-        <div class="faq-a"><span class="faq-am">A.</span>はい、喜んで対応させていただきます。小規模な組織ほど意思決定が早く、DXによる業務改善の効果が短期間で現れやすいというメリットがあります。「まずは特定のアナログ業務だけ自動化したい」といったスモールスタートも大歓迎です。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-qm">Q</div>
-          <div class="faq-qt">まだ依頼内容が具体的になっていません。「何とかしたい」という相談でも良いですか？</div>
-          <div class="faq-arr">▼</div>
-        </div>
-        <div class="faq-a"><span class="faq-am">A.</span>はい、ぜひその段階でご相談ください。「何が課題か分からない」「どこから手をつければいいか分からない」という状態から整理するのが、コンサルタントの役割です。現状の業務フローをヒアリングし、最も効果の高い改善策をご提案します。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-qm">Q</div>
-          <div class="faq-qt">費用はどのくらいかかりますか？ 高額なシステム開発が必要なのでしょうか？</div>
-          <div class="faq-arr">▼</div>
-        </div>
-        <div class="faq-a"><span class="faq-am">A.</span>当社では、高額なオリジナルシステムの開発よりも、Google WorkspaceやSaaS（クラウドサービス）などの「既存の便利なツール」を組み合わせた、低コストで運用しやすい解決策を推奨しています。ご予算に応じたプラン（スポット支援や月額顧問契約など）をご提示します。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <div class="faq-qm">Q</div>
-          <div class="faq-qt">業務がアナログで、紙やExcelばかりですが、デジタル化できますか？</div>
-          <div class="faq-arr">▼</div>
-        </div>
-        <div class="faq-a"><span class="faq-am">A.</span>はい、可能です。紙やExcel中心の業務は、最も劇的な効率化が期待できる領域です。例えば、手書きの日報をスマートフォン入力に変えたり、Excelの集計作業を自動化したりすることで、月数十時間の削減に成功した事例が多数あります。まずはお気軽にご相談ください。</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== CTA ===================== -->
-<section id="cta">
-  <div class="container">
-    <h2>まずは無料でご相談ください</h2>
-    <p>「何が課題か分からない」という段階からで構いません。IT・DX・生成AIの活用について、どんな小さなお悩みもお気軽にお問い合わせください。</p>
-    <div class="cta-btns">
-      <a href="#contact" class="btn btn-white">無料相談・お問い合わせ →</a>
-      <a href="tel:0988759530" class="btn btn-teal">📞 お電話でのご相談</a>
-    </div>
-    <p class="cta-note">✓ 初回相談 無料　✓ オンライン（Zoom）対応　✓ 全国対応</p>
-  </div>
-</section>
-
-<!-- ===================== CONTACT ===================== -->
-<section id="contact" class="section">
-  <div class="container">
-    <div class="sec-head fi">
-      <div class="label">お問い合わせ</div>
-      <h2 class="sec-title">無料相談・お問い合わせ</h2>
-      <p class="sec-sub">どんな小さなお悩みでもお気軽にご相談ください。通常1〜2営業日以内にご連絡いたします。</p>
-    </div>
-    <div class="contact-inner fi">
-      <div class="contact-info">
-        <h3>お気軽にご連絡ください</h3>
-        <p>IT活用・DX推進・生成AI導入について、「どこから始めればいいか分からない」という段階からご相談を承っております。初回相談は無料です。</p>
-        <div class="contact-detail">
-          <div class="cd-item">
-            <div class="cd-icon">📍</div>
-            <div>
-              <div class="cd-label">所在地</div>
-              <div class="cd-val">〒901-2131 沖縄県浦添市牧港4-10</div>
-            </div>
-          </div>
-          <div class="cd-item">
-            <div class="cd-icon">📞</div>
-            <div>
-              <div class="cd-label">お電話</div>
-              <div class="cd-val">098-875-9530</div>
-            </div>
-          </div>
-          <div class="cd-item">
-            <div class="cd-icon">✉️</div>
-            <div>
-              <div class="cd-label">メール</div>
-              <div class="cd-val"><a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a></div>
-            </div>
-          </div>
-          <div class="cd-item">
-            <div class="cd-icon">🌐</div>
-            <div>
-              <div class="cd-label">対応エリア</div>
-              <div class="cd-val">全国対応（Zoom / Google Meet）</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="contact-form-box" style="background:none; border:none; padding:0; text-align:left;">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZCH4YVtWCFmpzK8jNhvb8Tn0VvpQA_qgb6c9StU73pkDcvg/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:12px;">読み込んでいます…</iframe>
-        </div>
-        <div class="contact-privacy">
-          ご入力いただいた個人情報は、お問い合わせへの回答および当社サービスのご案内にのみ使用し、第三者へ提供することはありません。
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
+<!-- FOOTER -->
 <footer id="footer">
   <div class="container">
     <div class="footer-top">
@@ -980,7 +281,7 @@
           </div>
           <div class="logo-name">DX-<span>Consul</span></div>
         </div>
-        <p class="footer-lead">IT担当不在でも大丈夫。中小企業・小規模事業者さまのDX化を促進し、競争力強化を支援します。</p>
+        <p class="footer-lead">IT選任が不在でも大丈夫。デジタル経営をもっと身近に。中小企業・小規模事業者さまのDX化を支援します。</p>
         <div class="footer-info">
           <span>📍 〒901-2131 沖縄県浦添市牧港4-10</span>
           <span>📞 098-875-9530</span>
@@ -988,71 +289,25 @@
         </div>
       </div>
       <nav class="footer-nav">
-        <a href="#services">サービス紹介</a>
-        <a href="#reasons">選ばれる理由</a>
-        <a href="#flow">ご相談の流れ</a>
-        <a href="#example">導入事例</a>
-        <a href="#faq">よくある質問</a>
-        <a href="#contact">お問い合わせ</a>
-        <a href="#" style="font-size:12px;opacity:.5;margin-top:8px;">プライバシーポリシー</a>
+        <a href="index.html">ホーム</a>
+        <a href="service.html">サービス案内</a>
+        <a href="cases.html">コンサルティング事例</a>
+        <a href="cases.html#faq">よくある質問</a>
+        <a href="contact.html">お問い合わせ</a>
       </nav>
     </div>
-    <div class="footer-bottom">
-      Copyright 2026 DX-Consul All Rights Reserved.
-    </div>
+    <div class="footer-bottom">Copyright 2026 DX-Consul All Rights Reserved.</div>
   </div>
 </footer>
 
 <script>
-  /* ── FAQ アコーディオン ── */
-  function toggleFaq(el) {
-    const item = el.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-    notifyResize(); // FAQを開いたら高さを再通知
-  }
-
-  /* ── スクロールフェードイン ── */
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.08 });
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);} });
+  }, {threshold:0.08});
   document.querySelectorAll('.fi').forEach(el => io.observe(el));
-
-  /* ── iFrame 自動リサイズ（Google Sites対応） ──
-     Google Sitesの親ウィンドウへ現在のコンテンツ高さを postMessage で送信します。
-     Google Sitesはこのメッセージを受け取りiFrameの高さを自動調整します。
-  ── */
-  function notifyResize() {
-    const h = document.body.scrollHeight;
-    // Google Sites が受け取る形式
-    window.parent.postMessage({ type: 'IFRAME_HEIGHT', height: h }, '*');
-    // 旧来形式（念のため両方）
-    window.parent.postMessage(JSON.stringify({ height: h }), '*');
-  }
-
-  // ページロード後・画像等の読み込み完了後に通知
-  window.addEventListener('load', notifyResize);
-  window.addEventListener('resize', notifyResize);
-
-  // ResizeObserver でコンテンツ変化を監視
-  if (window.ResizeObserver) {
-    new ResizeObserver(notifyResize).observe(document.body);
-  }
-
-  /* ── アンカーリンクのスムーススクロール（iFrame内） ── */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
-      const id = this.getAttribute('href').slice(1);
-      const target = document.getElementById(id);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
+  function notifyResize(){const h=document.body.scrollHeight;window.parent.postMessage({type:'IFRAME_HEIGHT',height:h},'*');}
+  window.addEventListener('load',notifyResize);
+  if(window.ResizeObserver){new ResizeObserver(notifyResize).observe(document.body);}
 </script>
 </body>
 </html>

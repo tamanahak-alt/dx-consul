@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ｜DX-Consul</title>
+  <meta name="description" content="DX・生成AI・クラウド活用について、まずはお気軽にご相談ください。無料相談受付中です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0D2B4E;--teal:#0A7B74;--teal-light:#12A89E;--blue:#1A6FBB;--blue-light:#E0F0FF;--accent:#F5A623;--accent2:#E8522A;--text:#1A1A1A;--text-sub:#555;--bg:#FFF;--bg-gray:#F7F9FC;--border:#DDE6EF;--radius:10px;--shadow:0 4px 24px rgba(13,43,78,.10);--shadow-lg:0 8px 40px rgba(13,43,78,.18);--max:1060px;--font:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.8;font-size:16px;}
+    a{color:var(--blue);text-decoration:none;}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+    .section{padding:88px 0;}
+    .section-gray{background:var(--bg-gray);}
+    .label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--teal);background:#E0F5F4;padding:4px 16px;border-radius:20px;margin-bottom:14px;}
+    .sec-title{font-size:clamp(24px,3.8vw,36px);font-weight:900;line-height:1.35;margin-bottom:14px;}
+    .sec-sub{font-size:15px;color:var(--text-sub);max-width:620px;line-height:1.9;}
+    .sec-head{text-align:center;margin-bottom:48px;}
+    .sec-head .sec-sub{margin:0 auto;}
+
+    /* HEADER */
+    #hd{position:relative;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(13,43,78,.07);}
+    .hd-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 24px;}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .logo-icon{width:40px;height:40px;border-radius:8px;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .logo-icon svg{width:28px;height:28px;}
+    .logo-name{font-size:19px;font-weight:900;color:var(--navy);}
+    .logo-name span{color:var(--teal);}
+    .hd-nav{display:flex;align-items:center;gap:28px;}
+    .hd-nav a{font-size:14px;font-weight:500;color:var(--text);position:relative;padding-bottom:2px;}
+    .hd-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--teal);transition:width .2s;}
+    .hd-nav a:hover::after,.hd-nav a.active::after{width:100%;}
+    .hd-nav a.active{color:var(--teal);font-weight:700;}
+    .hd-cta{background:var(--accent2);color:#fff !important;padding:10px 22px;border-radius:50px;font-weight:700 !important;font-size:13px !important;box-shadow:0 3px 12px rgba(232,82,42,.32);transition:all .2s;}
+    .hd-cta::after{display:none !important;}
+    .hd-cta:hover{background:#c93d1e !important;transform:translateY(-1px);}
+
+    /* PAGE HERO */
+    .page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);padding:64px 0;text-align:center;color:#fff;}
+    .page-hero h1{font-size:clamp(26px,4vw,42px);font-weight:900;margin-bottom:12px;}
+    .page-hero p{font-size:15px;color:rgba(255,255,255,.8);max-width:540px;margin:0 auto;}
+
+    /* CONTACT LAYOUT */
+    .contact-wrap{display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:start;}
+    .contact-form-box{background:#fff;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;}
+    .contact-form-box iframe{display:block;width:100%;min-height:720px;border:none;}
+
+    /* INFO BOX */
+    .info-box{display:flex;flex-direction:column;gap:20px;}
+    .info-card{background:#fff;border-radius:14px;border:1px solid var(--border);box-shadow:var(--shadow);padding:26px;}
+    .info-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--teal-light);}
+    .info-list{display:flex;flex-direction:column;gap:12px;}
+    .info-row{display:flex;gap:12px;align-items:flex-start;font-size:14px;}
+    .info-icon{font-size:18px;flex-shrink:0;width:24px;text-align:center;}
+    .info-text{color:var(--text-sub);line-height:1.7;}
+    .info-text strong{color:var(--text);display:block;font-weight:700;}
+    .info-text a{color:var(--blue);}
+
+    /* PLEDGE BOX */
+    .pledge-card{background:linear-gradient(135deg,#E8F4FF 0%,#E0F5F4 100%);border-radius:14px;border:1px solid var(--border);padding:26px;}
+    .pledge-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;}
+    .pledge-list{display:flex;flex-direction:column;gap:10px;}
+    .pledge-item{display:flex;gap:10px;font-size:14px;color:var(--text);}
+    .pledge-item::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
+
+    /* FOOTER */
+    #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:52px 0 28px;}
+    .footer-top{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:36px;}
+    .footer-brand .logo-name{color:#fff;font-size:18px;}
+    .footer-brand .logo-name span{color:#6EFFF9;}
+    .footer-lead{font-size:13px;line-height:1.8;margin-top:14px;max-width:340px;}
+    .footer-info{margin-top:18px;font-size:13px;display:flex;flex-direction:column;gap:5px;}
+    .footer-info a{color:rgba(255,255,255,.75);}
+    .footer-nav{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+    .footer-nav a{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s;}
+    .footer-nav a:hover{color:#6EFFF9;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;font-size:12px;color:rgba(255,255,255,.45);}
+
+    @media(max-width:900px){
+      .contact-wrap{grid-template-columns:1fr;}
+      .footer-top{grid-template-columns:1fr;gap:24px;}
+      .footer-nav{align-items:flex-start;}
+    }
+    @media(max-width:600px){
+      .section{padding:60px 0;}
+      .hd-nav{display:none;}
+    }
+    .fi{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease;}
+    .fi.vis{opacity:1;transform:none;}
+    .fi-d1{transition-delay:.1s;}
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hd">
+  <div class="hd-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 14 L13 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 10 L19 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="3" y="26" font-size="8" font-weight="900" fill="white" font-family="Arial">DX</text>
+        </svg>
+      </div>
+      <div class="logo-name">DX-<span>Consul</span></div>
+    </a>
+    <nav class="hd-nav">
+      <a href="index.html">ホーム</a>
+      <a href="service.html">サービス</a>
+      <a href="cases.html">ユースケース・FAQ</a>
+      <a href="contact.html" class="active hd-cta">無料相談はこちら →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>お問い合わせ</h1>
+  <p>まずはお気軽にご相談ください。無料でご状況をお聞きし、最適なご提案をいたします。</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head fi">
+      <div class="label">無料相談受付中</div>
+      <h2 class="sec-title">お問い合わせフォーム</h2>
+      <p class="sec-sub">下記フォームにご記入のうえ送信してください。通常1〜2営業日以内にご返信いたします。</p>
+    </div>
+    <div class="contact-wrap">
+
+      <!-- FORM -->
+      <div class="contact-form-box fi">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeZCH4YVtWCFmpzK8jNhvb8Tn0VvpQA_qgb6c9StU73pkDcvg/viewform?embedded=true"
+          width="100%"
+          height="800"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          loading="lazy">
+          読み込んでいます…
+        </iframe>
+      </div>
+
+      <!-- INFO -->
+      <div class="info-box fi fi-d1">
+
+        <div class="info-card">
+          <h3>📍 会社情報</h3>
+          <div class="info-list">
+            <div class="info-row">
+              <span class="info-icon">🏢</span>
+              <div class="info-text">
+                <strong>所在地</strong>
+                〒901-2131<br>沖縄県浦添市牧港4-10
+              </div>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">📞</span>
+              <div class="info-text">
+                <strong>電話番号</strong>
+                <a href="tel:0988759530">098-875-9530</a>
+              </div>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">✉️</span>
+              <div class="info-text">
+                <strong>メールアドレス</strong>
+                <a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a>
+              </div>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">🕐</span>
+              <div class="info-text">
+                <strong>対応時間</strong>
+                平日 9:00〜18:00<br>
+                <span style="font-size:12px;color:#888;">※オンライン対応可（全国対応）</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pledge-card">
+          <h3>ご安心ください</h3>
+          <div class="pledge-list">
+            <div class="pledge-item">相談は完全無料です</div>
+            <div class="pledge-item">強引な営業は一切行いません</div>
+            <div class="pledge-item">全国どこでもオンライン対応</div>
+            <div class="pledge-item">ITが不得意な方も大歓迎</div>
+            <div class="pledge-item">秘密は厳守いたします</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h3>💡 こんなご相談もどうぞ</h3>
+          <div class="info-list">
+            <div class="info-row">
+              <span class="info-icon">→</span>
+              <div class="info-text">何から始めればいいかわからない</div>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">→</span>
+              <div class="info-text">自社に合うツールを教えてほしい</div>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">→</span>
+              <div class="info-text">以前の導入が定着しなかった</div>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">→</span>
+              <div class="info-text">生成AIを業務で使いたいが不安</div>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">→</span>
+              <div class="info-text">費用感・期間だけ聞きたい</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-name">DX-<span>Consul</span></div>
+        <p class="footer-lead">IT選任が不在でも大丈夫。生成AI・クラウド・DX伴走支援で、中小企業のデジタル経営を身近にします。</p>
+        <div class="footer-info">
+          <span>〒901-2131 沖縄県浦添市牧港4-10</span>
+          <span>TEL: 098-875-9530</span>
+          <a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">ホーム</a>
+        <a href="service.html">サービス</a>
+        <a href="cases.html">ユースケース・FAQ</a>
+        <a href="contact.html">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">© 2025 DX-Consul. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // Fade-in on scroll
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');}});
+  },{threshold:0.1});
+  document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
