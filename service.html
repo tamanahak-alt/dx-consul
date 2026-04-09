@@ -130,6 +130,57 @@
       .hd-nav{display:none;}
       .flow-wrap{grid-template-columns:repeat(2,1fr);}
     }
+    /* SERVICE DETAIL */
+    .svc-detail{padding:80px 0;}
+    .svc-detail-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    .svc-detail-inner.rev{direction:rtl;}
+    .svc-detail-inner.rev > *{direction:ltr;}
+    .svc-detail-text .label-it{background:#E0F0FF;color:var(--blue);}
+    .svc-detail-text .label-ai{background:#EDE5F8;color:#7B4CC5;}
+    .svc-detail-text h2{font-size:clamp(22px,3vw,30px);font-weight:900;line-height:1.35;margin-bottom:14px;color:var(--navy);}
+    .svc-detail-text p{font-size:14px;color:var(--text-sub);line-height:1.9;margin-bottom:20px;}
+
+    /* Monthly cycle (IT) */
+    .monthly-cycle{background:#F0F7FF;border-radius:20px;padding:28px 24px;border:1px solid #C8DEFF;}
+    .monthly-title{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:18px;text-align:center;letter-spacing:.08em;}
+    .monthly-steps{display:flex;flex-direction:column;gap:0;}
+    .monthly-step{display:flex;gap:16px;align-items:flex-start;position:relative;padding-bottom:24px;}
+    .monthly-step:last-child{padding-bottom:0;}
+    .monthly-step:not(:last-child)::after{content:'';position:absolute;left:19px;top:40px;bottom:0;width:2px;background:#C8DEFF;}
+    .monthly-dot{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;box-shadow:0 2px 8px rgba(26,111,187,.3);}
+    .monthly-step-body{flex:1;}
+    .monthly-step-period{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.06em;margin-bottom:4px;}
+    .monthly-step-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+    .monthly-step-desc{font-size:12px;color:var(--text-sub);line-height:1.7;}
+    .monthly-badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;justify-content:center;}
+    .monthly-badge{font-size:11px;padding:4px 12px;border-radius:20px;font-weight:700;background:#fff;border:1px solid #C8DEFF;color:var(--blue);}
+
+    /* Stakeholder */
+    .stakeholder-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px;}
+    .stakeholder-card{background:#fff;border:1px solid #C8DEFF;border-radius:10px;padding:10px 12px;text-align:center;}
+    .stakeholder-icon{font-size:20px;margin-bottom:4px;}
+    .stakeholder-name{font-size:12px;font-weight:700;color:var(--navy);}
+    .stakeholder-card.highlight{background:linear-gradient(135deg,var(--blue),#3B9AE8);border-color:transparent;}
+    .stakeholder-card.highlight .stakeholder-name{color:#fff;}
+
+    /* AI cycle */
+    .ai-cycle{background:#F6F0FF;border-radius:20px;padding:28px 24px;border:1px solid #D8C8F0;}
+    .ai-cycle-title{font-size:13px;font-weight:700;color:#7B4CC5;margin-bottom:18px;text-align:center;letter-spacing:.08em;}
+    .ai-steps{display:flex;gap:8px;margin-bottom:20px;}
+    .ai-step{flex:1;background:#fff;border-radius:12px;padding:14px 10px;text-align:center;border:1px solid #D8C8F0;position:relative;}
+    .ai-step-num{width:28px;height:28px;border-radius:50%;background:#7B4CC5;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;}
+    .ai-step-label{font-size:10px;font-weight:700;color:#7B4CC5;margin-bottom:4px;letter-spacing:.04em;}
+    .ai-step-title{font-size:12px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:4px;}
+    .ai-step-desc{font-size:10px;color:var(--text-sub);line-height:1.6;}
+    .ai-arrow{display:flex;align-items:center;color:#D8C8F0;font-size:18px;flex-shrink:0;}
+    .ai-effect{display:flex;gap:6px;align-items:stretch;}
+    .ai-month{flex:1;background:#fff;border-radius:10px;padding:10px 8px;text-align:center;border:1px solid #D8C8F0;}
+    .ai-month-label{font-size:10px;font-weight:700;color:#7B4CC5;margin-bottom:4px;}
+    .ai-month-bar{height:4px;border-radius:4px;background:linear-gradient(90deg,#7B4CC5,#9B59CF);margin-bottom:6px;}
+    .ai-month-desc{font-size:10px;color:var(--text-sub);line-height:1.5;}
+    .ai-effect-arrow{display:flex;align-items:center;color:#D8C8F0;font-size:14px;}
+    .ai-effect-label{font-size:11px;font-weight:700;color:#7B4CC5;text-align:center;margin-top:10px;}
+
     .fi{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease;}
     .fi.vis{opacity:1;transform:none;}
     .fi-d1{transition-delay:.08s;}
@@ -218,6 +269,145 @@
             <li>定期レビュー・軌道修正</li>
           </ul>
           <a href="contact.html" class="svc-link">詳しく相談する →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IT SERVICE DETAIL -->
+<section id="it-service" class="svc-detail section-gray fi">
+  <div class="container">
+    <div class="svc-detail-inner">
+      <div class="svc-detail-text">
+        <div class="label label-it">IT伴走支援 Aプラン</div>
+        <h2>1ヶ月サイクルで<br>IT課題を確実に前進させる</h2>
+        <p>月3回の訪問（月初・中旬・下旬）を軸に、現場の業務フローを可視化し、ソリューション選定から導入決定まで一気通貫でサポート。経営幹部・IT推進担当・経理部門と連携しながら、組織全体のアライメントを整えます。</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li style="display:flex;gap:8px;font-size:14px;"><span style="color:var(--blue);font-weight:700;">✓</span>業務フロー作図・現状可視化</li>
+          <li style="display:flex;gap:8px;font-size:14px;"><span style="color:var(--blue);font-weight:700;">✓</span>ソリューション調査・比較検討</li>
+          <li style="display:flex;gap:8px;font-size:14px;"><span style="color:var(--blue);font-weight:700;">✓</span>経営幹部〜現場まで全方位サポート</li>
+          <li style="display:flex;gap:8px;font-size:14px;"><span style="color:var(--blue);font-weight:700;">✓</span>導入ソリューション選定・最終決定</li>
+        </ul>
+      </div>
+      <div>
+        <div class="monthly-cycle">
+          <div class="monthly-title">📅 1ヶ月 3ステップ サイクル</div>
+          <div class="monthly-steps">
+            <div class="monthly-step">
+              <div class="monthly-dot">1回目</div>
+              <div class="monthly-step-body">
+                <div class="monthly-step-period">月初旬 ／ 第1回訪問</div>
+                <div class="monthly-step-title">テーマ設定・現状可視化</div>
+                <div class="monthly-step-desc">今月取り組む業務課題を設定。現場ヒアリングにより業務フロー・ボトルネックを可視化します。</div>
+              </div>
+            </div>
+            <div class="monthly-step">
+              <div class="monthly-dot">2回目</div>
+              <div class="monthly-step-body">
+                <div class="monthly-step-period">月中旬 ／ 第2回訪問</div>
+                <div class="monthly-step-title">業務再定義・解決策選定</div>
+                <div class="monthly-step-desc">あるべき業務フローを再定義。複数の解決策を比較・検討し、最適なソリューションを絞り込みます。</div>
+              </div>
+            </div>
+            <div class="monthly-step">
+              <div class="monthly-dot">3回目</div>
+              <div class="monthly-step-body">
+                <div class="monthly-step-period">月下旬 ／ 第3回訪問</div>
+                <div class="monthly-step-title">最終デモ・導入決定</div>
+                <div class="monthly-step-desc">選定ツールのデモを実施し、経営幹部を含む関係者で合意形成。翌月の推進方針を決定します。</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid #C8DEFF;">
+            <div style="font-size:11px;font-weight:700;color:var(--blue);text-align:center;margin-bottom:10px;">関わるステークホルダー</div>
+            <div class="stakeholder-grid">
+              <div class="stakeholder-card">
+                <div class="stakeholder-icon">👔</div>
+                <div class="stakeholder-name">経営幹部</div>
+              </div>
+              <div class="stakeholder-card">
+                <div class="stakeholder-icon">💻</div>
+                <div class="stakeholder-name">IT推進メンバー</div>
+              </div>
+              <div class="stakeholder-card">
+                <div class="stakeholder-icon">📊</div>
+                <div class="stakeholder-name">経理部門</div>
+              </div>
+              <div class="stakeholder-card highlight">
+                <div class="stakeholder-icon">🤝</div>
+                <div class="stakeholder-name">DXコンサル（伴走）</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI SERVICE DETAIL -->
+<section id="ai-service" class="svc-detail fi">
+  <div class="container">
+    <div class="svc-detail-inner rev">
+      <div class="svc-detail-text">
+        <div class="label label-ai">生成AI伴走支援</div>
+        <h2>月2回の訪問で<br>生成AI活用を深化・定着させる</h2>
+        <p>「ツールだけ渡す」のではなく、月2回の現場訪問によるアジャイルサイクルで、生成AIを実際の業務に根付かせます。Month1・2・3と積み重ねることで、複利的に活用レベルが向上し、最終的には自走・スケールアップを実現します。</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li style="display:flex;gap:8px;font-size:14px;"><span style="color:#7B4CC5;font-weight:700;">✓</span>月2回の訪問アジャイルサイクル</li>
+          <li style="display:flex;gap:8px;font-size:14px;"><span style="color:#7B4CC5;font-weight:700;">✓</span>業務別プロンプト設計・カスタマイズ</li>
+          <li style="display:flex;gap:8px;font-size:14px;"><span style="color:#7B4CC5;font-weight:700;">✓</span>社内AIガイドライン策定支援</li>
+          <li style="display:flex;gap:8px;font-size:14px;"><span style="color:#7B4CC5;font-weight:700;">✓</span>活用の複利効果で自走・スケールアップ</li>
+        </ul>
+      </div>
+      <div>
+        <div class="ai-cycle">
+          <div class="ai-cycle-title">🔄 月2回 アジャイルサイクル</div>
+          <div style="display:flex;gap:6px;align-items:center;margin-bottom:20px;">
+            <div class="ai-step" style="flex:1;">
+              <div class="ai-step-num">1</div>
+              <div class="ai-step-label">STEP 1</div>
+              <div class="ai-step-title">1回目訪問</div>
+              <div class="ai-step-desc">業務課題ヒアリング・AI活用テーマ設定・前回の振り返り</div>
+            </div>
+            <div class="ai-arrow">→</div>
+            <div class="ai-step" style="flex:1;">
+              <div class="ai-step-num">2</div>
+              <div class="ai-step-label">STEP 2</div>
+              <div class="ai-step-title">内部作業</div>
+              <div class="ai-step-desc">プロンプト設計・ツール準備・テスト・資料作成</div>
+            </div>
+            <div class="ai-arrow">→</div>
+            <div class="ai-step" style="flex:1;">
+              <div class="ai-step-num">3</div>
+              <div class="ai-step-label">STEP 3</div>
+              <div class="ai-step-title">2回目訪問</div>
+              <div class="ai-step-desc">デモ・フィードバック収集・次テーマ設定・定着確認</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #D8C8F0;padding-top:16px;">
+            <div style="font-size:11px;font-weight:700;color:#7B4CC5;text-align:center;margin-bottom:10px;">📈 伴走の複利効果</div>
+            <div class="ai-effect">
+              <div class="ai-month">
+                <div class="ai-month-label">Month 1</div>
+                <div class="ai-month-bar" style="width:40%;"></div>
+                <div class="ai-month-desc">基本活用・<br>個人レベル定着</div>
+              </div>
+              <div class="ai-effect-arrow">→</div>
+              <div class="ai-month">
+                <div class="ai-month-label">Month 2</div>
+                <div class="ai-month-bar" style="width:70%;"></div>
+                <div class="ai-month-desc">チーム展開・<br>業務フロー統合</div>
+              </div>
+              <div class="ai-effect-arrow">→</div>
+              <div class="ai-month">
+                <div class="ai-month-label">Month 3+</div>
+                <div class="ai-month-bar" style="width:100%;"></div>
+                <div class="ai-month-desc">自走・スケール<br>アップへ</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
