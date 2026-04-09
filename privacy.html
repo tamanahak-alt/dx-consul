@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人情報保護方針｜DX-Consul</title>
+  <meta name="description" content="DX-Consulの個人情報保護方針です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0D2B4E;--teal:#0A7B74;--teal-light:#12A89E;--blue:#1A6FBB;--blue-light:#E0F0FF;--accent:#F5A623;--accent2:#E8522A;--text:#1A1A1A;--text-sub:#555;--bg:#FFF;--bg-gray:#F7F9FC;--border:#DDE6EF;--radius:10px;--shadow:0 4px 24px rgba(13,43,78,.10);--max:1060px;--font:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.8;font-size:16px;}
+    a{color:var(--blue);text-decoration:none;}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+    /* HEADER */
+    #hd{position:relative;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(13,43,78,.07);}
+    .hd-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 24px;}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .logo-img{height:38px;width:auto;display:block;}
+    .hd-nav{display:flex;align-items:center;gap:28px;}
+    .hd-nav a{font-size:14px;font-weight:500;color:var(--text);position:relative;padding-bottom:2px;}
+    .hd-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--teal);transition:width .2s;}
+    .hd-nav a:hover::after{width:100%;}
+    .hd-cta{background:var(--accent2);color:#fff !important;padding:10px 22px;border-radius:50px;font-weight:700 !important;font-size:13px !important;box-shadow:0 3px 12px rgba(232,82,42,.32);transition:all .2s;}
+    .hd-cta::after{display:none !important;}
+    .hd-cta:hover{background:#c93d1e !important;transform:translateY(-1px);}
+
+    /* PAGE HERO */
+    .page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);padding:64px 0;text-align:center;color:#fff;}
+    .page-hero h1{font-size:clamp(26px,4vw,42px);font-weight:900;margin-bottom:12px;}
+    .page-hero p{font-size:15px;color:rgba(255,255,255,.8);max-width:540px;margin:0 auto;}
+
+    /* CONTENT */
+    .privacy-content{max-width:760px;margin:0 auto;padding:72px 24px 96px;}
+    .privacy-content h2{font-size:22px;font-weight:900;color:var(--navy);margin:44px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--teal-light);}
+    .privacy-content h2:first-of-type{margin-top:0;}
+    .privacy-content p{font-size:15px;color:var(--text);line-height:1.9;margin-bottom:14px;}
+    .privacy-content ul{margin:10px 0 14px 20px;display:flex;flex-direction:column;gap:8px;}
+    .privacy-content li{font-size:15px;color:var(--text);line-height:1.8;}
+    .privacy-date{font-size:13px;color:var(--text-sub);text-align:right;margin-top:48px;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--teal);margin-bottom:36px;}
+    .back-link::before{content:'←';}
+
+    /* FOOTER */
+    #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:52px 0 28px;}
+    .footer-top{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:36px;}
+    .footer-logo-img{height:34px;width:auto;display:block;margin-bottom:14px;}
+    .footer-lead{font-size:13px;line-height:1.8;max-width:340px;}
+    .footer-info{margin-top:18px;font-size:13px;display:flex;flex-direction:column;gap:5px;}
+    .footer-info a{color:rgba(255,255,255,.75);}
+    .footer-nav{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+    .footer-nav a{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s;}
+    .footer-nav a:hover{color:#6EFFF9;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;font-size:12px;color:rgba(255,255,255,.45);}
+
+    @media(max-width:900px){
+      .footer-top{grid-template-columns:1fr;gap:24px;}
+      .footer-nav{align-items:flex-start;}
+    }
+    @media(max-width:600px){
+      .hd-nav{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hd">
+  <div class="hd-inner">
+    <a class="logo" href="index.html">
+      <img src="./画像/DXコンサルロゴ.png" alt="DX-Consul" class="logo-img">
+    </a>
+    <nav class="hd-nav">
+      <a href="index.html">ホーム</a>
+      <a href="service.html">サービス</a>
+      <a href="cases.html">ユースケース・FAQ</a>
+      <a href="contact.html" class="hd-cta">無料相談はこちら →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>個人情報保護方針</h1>
+  <p>Privacy Policy</p>
+</div>
+
+<!-- CONTENT -->
+<div class="privacy-content">
+  <a class="back-link" href="contact.html">お問い合わせページへ戻る</a>
+
+  <p>DX-Consul（以下「当社」）は、お客様の個人情報の保護を重要な責務と認識し、以下の方針に基づき適切に取り扱います。</p>
+
+  <h2>1. 事業者情報</h2>
+  <p>
+    名称：DX-Consul<br>
+    所在地：〒901-2131 沖縄県浦添市牧港4-10<br>
+    電話番号：070-1990-7207<br>
+    メールアドレス：tamanahak@dx-consul.com
+  </p>
+
+  <h2>2. 個人情報の取得</h2>
+  <p>当社は、お問い合わせフォーム・電話・メール等を通じて、以下の個人情報をお客様から取得する場合があります。</p>
+  <ul>
+    <li>氏名・会社名</li>
+    <li>メールアドレス</li>
+    <li>電話番号</li>
+    <li>お問い合わせ内容</li>
+    <li>その他、お客様がご提供いただいた情報</li>
+  </ul>
+
+  <h2>3. 個人情報の利用目的</h2>
+  <p>取得した個人情報は、以下の目的に限り利用します。</p>
+  <ul>
+    <li>お問い合わせへの回答・ご連絡</li>
+    <li>当社サービスのご提案・ご案内</li>
+    <li>コンサルティングサービスの提供</li>
+    <li>サービス改善に関するアンケートおよびご案内（同意を得た場合に限る）</li>
+  </ul>
+
+  <h2>4. 個人情報の第三者提供</h2>
+  <p>当社は、以下の場合を除き、お客様の個人情報を第三者に提供・開示しません。</p>
+  <ul>
+    <li>お客様ご本人の同意がある場合</li>
+    <li>法令に基づき開示が必要な場合</li>
+    <li>人の生命・身体・財産の保護のために必要な場合</li>
+  </ul>
+
+  <h2>5. 個人情報の安全管理</h2>
+  <p>当社は、個人情報の漏えい・滅失・毀損を防止するために、適切な安全管理措置を実施します。個人情報を取り扱う業務を外部委託する場合は、委託先に対して適切な監督を行います。</p>
+
+  <h2>6. 個人情報の開示・訂正・削除</h2>
+  <p>お客様は、当社が保有するご自身の個人情報の開示・訂正・利用停止・削除を求めることができます。ご希望の場合は、下記お問い合わせ先までご連絡ください。ご本人確認の上、合理的な期間内に対応いたします。</p>
+
+  <h2>7. Cookie・アクセス解析について</h2>
+  <p>当社ウェブサイトでは、サービス向上を目的としてGoogle Analytics等のアクセス解析ツールを使用する場合があります。これらのツールはCookieを使用してデータを収集しますが、個人を特定する情報は含まれません。ブラウザの設定によりCookieを無効にすることが可能です。</p>
+
+  <h2>8. 方針の変更</h2>
+  <p>本方針は、法令の改正・業務内容の変更等に伴い、予告なく改定することがあります。変更後の方針は当ウェブサイト上に掲載した時点で効力を生じるものとします。</p>
+
+  <h2>9. お問い合わせ先</h2>
+  <p>
+    個人情報の取り扱いに関するご質問・ご要望は、以下までご連絡ください。<br>
+    <br>
+    DX-Consul 個人情報保護窓口<br>
+    メール：<a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a><br>
+    電話：070-1990-7207（平日 9:00〜18:00）
+  </p>
+
+  <p class="privacy-date">制定日：2026年4月1日</p>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="./画像/DXコンサルロゴ.png" alt="DX-Consul" class="footer-logo-img">
+        <p class="footer-lead">IT専任者が不在でも大丈夫。デジタル経営をもっと身近に。中小企業・小規模事業者さまのDX化を支援します。</p>
+        <div class="footer-info">
+          <span>📍 〒901-2131 沖縄県浦添市牧港4-10</span>
+          <span>📞 <a href="tel:07019907207">070-1990-7207</a></span>
+          <span>✉️ <a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a></span>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">ホーム</a>
+        <a href="service.html">サービス案内</a>
+        <a href="cases.html">コンサルティング事例</a>
+        <a href="cases.html#faq">よくある質問</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="privacy.html">個人情報保護方針</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">Copyright 2026 DX-Consul All Rights Reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

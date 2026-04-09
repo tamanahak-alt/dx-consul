@@ -33,10 +33,7 @@
     #hd{position:relative;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(13,43,78,.07);}
     .hd-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 24px;}
     .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-    .logo-icon{width:40px;height:40px;border-radius:8px;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .logo-icon svg{width:28px;height:28px;}
-    .logo-name{font-size:19px;font-weight:900;color:var(--navy);}
-    .logo-name span{color:var(--teal);}
+    .logo-img{height:38px;width:auto;display:block;}
     .hd-nav{display:flex;align-items:center;gap:28px;}
     .hd-nav a{font-size:14px;font-weight:500;color:var(--text);position:relative;padding-bottom:2px;}
     .hd-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--teal);transition:width .2s;}
@@ -102,9 +99,8 @@
     /* FOOTER */
     #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:52px 0 28px;}
     .footer-top{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:36px;}
-    .footer-brand .logo-name{color:#fff;font-size:18px;}
-    .footer-brand .logo-name span{color:#6EFFF9;}
-    .footer-lead{font-size:13px;line-height:1.8;margin-top:14px;max-width:340px;}
+    .footer-logo-img{height:34px;width:auto;display:block;margin-bottom:14px;}
+    .footer-lead{font-size:13px;line-height:1.8;max-width:340px;}
     .footer-info{margin-top:18px;font-size:13px;display:flex;flex-direction:column;gap:5px;}
     .footer-info a{color:rgba(255,255,255,.75);}
     .footer-nav{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
@@ -137,14 +133,7 @@
 <header id="hd">
   <div class="hd-inner">
     <a class="logo" href="index.html">
-      <div class="logo-icon">
-        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 14 L13 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M13 10 L19 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <text x="3" y="26" font-size="8" font-weight="900" fill="white" font-family="Arial">DX</text>
-        </svg>
-      </div>
-      <div class="logo-name">DX-<span>Consul</span></div>
+      <img src="./画像/DXコンサルロゴ.png" alt="DX-Consul" class="logo-img">
     </a>
     <nav class="hd-nav">
       <a href="index.html">ホーム</a>
@@ -251,7 +240,7 @@
         <div class="reason-num">03</div>
         <div class="reason-body">
           <h3><em>生成AI活用</em>の豊富な専門知識</h3>
-          <p>ChatGPT / Claude / Microsoft Copilot など最新の生成AIを業務活用するための実践的な知識と支援実績を持ちます。</p>
+          <p>Google Gemini/NotebookLM、Anthropic Claude、ChatGPT等、最新の生成AIを業務活用するための実践的な知識と支援実績を持ちます。</p>
         </div>
       </div>
       <div class="reason-card">
@@ -288,6 +277,7 @@
       </div>
       <div class="flow-step">
         <div class="flow-circle">📋</div>
+        <div class="flow-badge">無料</div>
         <h4>課題整理・提案</h4>
         <p>現状整理と最適プランをご提案</p>
       </div>
@@ -312,7 +302,7 @@
     <p>「何が課題か分からない」という段階からで構いません。IT・DX・生成AIの活用について、どんな小さなお悩みもお気軽にお問い合わせください。</p>
     <div class="cta-btns">
       <a href="contact.html" class="btn btn-white">無料相談・お問い合わせ →</a>
-      <a href="tel:0988759530" class="btn btn-teal">📞 お電話でのご相談</a>
+      <a href="tel:07019907207" class="btn btn-teal">📞 お電話でのご相談</a>
     </div>
     <p class="cta-note">✓ 初回相談 無料　✓ オンライン（Zoom）対応　✓ 全国対応</p>
   </div>
@@ -323,20 +313,11 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo">
-          <div class="logo-icon">
-            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 14 L13 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M13 10 L19 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="3" y="26" font-size="8" font-weight="900" fill="white" font-family="Arial">DX</text>
-            </svg>
-          </div>
-          <div class="logo-name">DX-<span>Consul</span></div>
-        </div>
+        <img src="./画像/DXコンサルロゴ.png" alt="DX-Consul" class="footer-logo-img">
         <p class="footer-lead">IT専任者が不在でも大丈夫。デジタル経営をもっと身近に。中小企業・小規模事業者さまのDX化を支援します。</p>
         <div class="footer-info">
           <span>📍 〒901-2131 沖縄県浦添市牧港4-10</span>
-          <span>📞 098-875-9530</span>
+          <span>📞 <a href="tel:07019907207" style="color:rgba(255,255,255,.75);">070-1990-7207</a></span>
           <span>✉️ <a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a></span>
         </div>
       </div>
@@ -346,6 +327,7 @@
         <a href="cases.html">コンサルティング事例</a>
         <a href="cases.html#faq">よくある質問</a>
         <a href="contact.html">お問い合わせ</a>
+        <a href="privacy.html">個人情報保護方針</a>
       </nav>
     </div>
     <div class="footer-bottom">Copyright 2026 DX-Consul All Rights Reserved.</div>

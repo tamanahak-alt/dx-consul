@@ -33,10 +33,7 @@
     #hd{position:relative;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(13,43,78,.07);}
     .hd-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 24px;}
     .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-    .logo-icon{width:40px;height:40px;border-radius:8px;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .logo-icon svg{width:28px;height:28px;}
-    .logo-name{font-size:19px;font-weight:900;color:var(--navy);}
-    .logo-name span{color:var(--teal);}
+    .logo-img{height:38px;width:auto;display:block;}
     .hd-nav{display:flex;align-items:center;gap:28px;}
     .hd-nav a{font-size:14px;font-weight:500;color:var(--text);position:relative;padding-bottom:2px;}
     .hd-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--teal);transition:width .2s;}
@@ -55,11 +52,13 @@
     .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
     .case-card{background:#fff;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;transition:transform .25s,box-shadow .25s;}
     .case-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
-    .case-head{padding:22px 26px 18px;color:#fff;}
-    .case-ai .case-head{background:linear-gradient(135deg,#5B2D9E 0%,#9B59CF 100%);}
-    .case-it .case-head{background:linear-gradient(135deg,#1A6FBB 0%,#3B9AE8 100%);}
-    .case-dx .case-head{background:linear-gradient(135deg,#0A7B74 0%,#12C5BB 100%);}
-    .case-mix .case-head{background:linear-gradient(135deg,#1A4A8A 0%,#5B2D9E 100%);}
+    .case-head{padding:22px 26px 18px;color:#fff;position:relative;overflow:hidden;}
+    .case-ai .case-head{background:linear-gradient(135deg,rgba(91,45,158,.92) 0%,rgba(155,89,207,.88) 100%);}
+    .case-it .case-head{background:linear-gradient(135deg,rgba(26,111,187,.92) 0%,rgba(59,154,232,.88) 100%);}
+    .case-dx .case-head{background:linear-gradient(135deg,rgba(10,123,116,.92) 0%,rgba(18,197,187,.88) 100%);}
+    .case-mix .case-head{background:linear-gradient(135deg,rgba(26,74,138,.92) 0%,rgba(91,45,158,.88) 100%);}
+    .case-head-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;z-index:0;mix-blend-mode:luminosity;}
+    .case-head>*:not(.case-head-img){position:relative;z-index:1;}
     .case-tag{font-size:11px;font-weight:700;letter-spacing:.1em;opacity:.85;margin-bottom:8px;}
     .case-head h3{font-size:18px;font-weight:900;margin-bottom:4px;}
     .case-head .case-industry{font-size:13px;opacity:.8;}
@@ -92,9 +91,8 @@
     /* FOOTER */
     #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:52px 0 28px;}
     .footer-top{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:36px;}
-    .footer-brand .logo-name{color:#fff;font-size:18px;}
-    .footer-brand .logo-name span{color:#6EFFF9;}
-    .footer-lead{font-size:13px;line-height:1.8;margin-top:14px;max-width:340px;}
+    .footer-logo-img{height:34px;width:auto;display:block;margin-bottom:14px;}
+    .footer-lead{font-size:13px;line-height:1.8;max-width:340px;}
     .footer-info{margin-top:18px;font-size:13px;display:flex;flex-direction:column;gap:5px;}
     .footer-info a{color:rgba(255,255,255,.75);}
     .footer-nav{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
@@ -125,14 +123,7 @@
 <header id="hd">
   <div class="hd-inner">
     <a class="logo" href="index.html">
-      <div class="logo-icon">
-        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 14 L13 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M13 10 L19 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <text x="3" y="26" font-size="8" font-weight="900" fill="white" font-family="Arial">DX</text>
-        </svg>
-      </div>
-      <div class="logo-name">DX-<span>Consul</span></div>
+      <img src="./画像/DXコンサルロゴ.png" alt="DX-Consul" class="logo-img">
     </a>
     <nav class="hd-nav">
       <a href="index.html">ホーム</a>
@@ -162,6 +153,7 @@
       <!-- 建設業 -->
       <div class="case-card case-ai fi">
         <div class="case-head">
+          <img src="./画像/建設業.png" alt="建設業" class="case-head-img">
           <div class="case-tag">生成AI活用・定着支援</div>
           <h3>書類・報告業務の負担を減らしたい</h3>
           <div class="case-industry">活用イメージ：建設業・製造業など現場系</div>
@@ -186,6 +178,7 @@
       <!-- 食品製造業 -->
       <div class="case-card case-it fi fi-d1">
         <div class="case-head">
+          <img src="./画像/食品製造業.png" alt="食品製造業" class="case-head-img">
           <div class="case-tag">クラウド導入・活用支援</div>
           <h3>紙・メール頼りの情報共有を変えたい</h3>
           <div class="case-industry">活用イメージ：多拠点・製造・小売業など</div>
@@ -210,6 +203,7 @@
       <!-- 建機販売業 -->
       <div class="case-card case-dx fi fi-d1">
         <div class="case-head">
+          <img src="./画像/建機販売業.png" alt="建機販売業" class="case-head-img">
           <div class="case-tag">DX伴走支援</div>
           <h3>「DXを進めたい」が、何から手をつければいいかわからない</h3>
           <div class="case-industry">活用イメージ：中堅・中小企業の経営者・管理職</div>
@@ -234,6 +228,7 @@
       <!-- ベンチャー企業 -->
       <div class="case-card case-mix fi fi-d2">
         <div class="case-head">
+          <img src="./画像/ベンチャー企業.png" alt="ベンチャー企業" class="case-head-img">
           <div class="case-tag">生成AI × クラウド 複合支援</div>
           <h3>ツールがバラバラで、情報が属人化している</h3>
           <div class="case-industry">活用イメージ：成長期のスタートアップ・小規模企業</div>
@@ -346,11 +341,11 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo-name">DX-<span>Consul</span></div>
+        <img src="./画像/DXコンサルロゴ.png" alt="DX-Consul" class="footer-logo-img">
         <p class="footer-lead">IT専任者が不在でも大丈夫。生成AI・クラウド・DX伴走支援で、中小企業のデジタル経営を身近にします。</p>
         <div class="footer-info">
           <span>〒901-2131 沖縄県浦添市牧港4-10</span>
-          <span>TEL: 098-875-9530</span>
+          <span>TEL: <a href="tel:07019907207" style="color:rgba(255,255,255,.75);">070-1990-7207</a></span>
           <a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a>
         </div>
       </div>
@@ -359,9 +354,10 @@
         <a href="service.html">サービス</a>
         <a href="cases.html">ユースケース・FAQ</a>
         <a href="contact.html">お問い合わせ</a>
+        <a href="privacy.html">個人情報保護方針</a>
       </nav>
     </div>
-    <div class="footer-bottom">© 2025 DX-Consul. All rights reserved.</div>
+    <div class="footer-bottom">Copyright 2026 DX-Consul All Rights Reserved.</div>
   </div>
 </footer>
 

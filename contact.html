@@ -26,10 +26,7 @@
     #hd{position:relative;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(13,43,78,.07);}
     .hd-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max);margin:0 auto;padding:0 24px;}
     .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-    .logo-icon{width:40px;height:40px;border-radius:8px;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .logo-icon svg{width:28px;height:28px;}
-    .logo-name{font-size:19px;font-weight:900;color:var(--navy);}
-    .logo-name span{color:var(--teal);}
+    .logo-img{height:38px;width:auto;display:block;}
     .hd-nav{display:flex;align-items:center;gap:28px;}
     .hd-nav a{font-size:14px;font-weight:500;color:var(--text);position:relative;padding-bottom:2px;}
     .hd-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--teal);transition:width .2s;}
@@ -46,8 +43,28 @@
 
     /* CONTACT LAYOUT */
     .contact-wrap{display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:start;}
-    .contact-form-box{background:#fff;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;}
-    .contact-form-box iframe{display:block;width:100%;min-height:720px;border:none;}
+
+    /* FORM */
+    .contact-form-box{background:#fff;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);padding:36px 40px;}
+    .form-group{margin-bottom:22px;}
+    .form-label{display:block;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:7px;}
+    .form-required{display:inline-block;background:var(--accent2);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:middle;}
+    .form-input,.form-select,.form-textarea{width:100%;padding:11px 14px;font-size:14px;font-family:var(--font);color:var(--text);background:#fff;border:1px solid var(--border);border-radius:8px;outline:none;transition:border-color .2s,box-shadow .2s;line-height:1.6;}
+    .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(10,123,116,.1);}
+    .form-textarea{resize:vertical;min-height:140px;}
+    .form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+    .privacy-agree{display:flex;align-items:flex-start;gap:10px;padding:16px;background:var(--bg-gray);border-radius:8px;border:1px solid var(--border);}
+    .privacy-agree input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:3px;accent-color:var(--teal);cursor:pointer;}
+    .privacy-agree-text{font-size:13px;color:var(--text-sub);line-height:1.7;}
+    .privacy-agree-text a{color:var(--teal);font-weight:700;text-decoration:underline;}
+    .btn-submit{width:100%;padding:17px;background:var(--accent2);color:#fff;border:none;border-radius:50px;font-size:16px;font-weight:700;font-family:var(--font);cursor:pointer;transition:background .2s,transform .2s;box-shadow:0 4px 18px rgba(232,82,42,.35);margin-top:8px;}
+    .btn-submit:hover{background:#d04420;transform:translateY(-2px);}
+    .form-note{font-size:12px;color:var(--text-sub);margin-top:12px;text-align:center;}
+
+    /* Sent message */
+    .sent-msg{display:none;background:#E0F5F4;border:1px solid var(--teal-light);border-radius:12px;padding:24px;text-align:center;margin-top:16px;}
+    .sent-msg h3{color:var(--teal);font-size:18px;font-weight:900;margin-bottom:8px;}
+    .sent-msg p{font-size:14px;color:var(--text-sub);}
 
     /* INFO BOX */
     .info-box{display:flex;flex-direction:column;gap:20px;}
@@ -70,9 +87,8 @@
     /* FOOTER */
     #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:52px 0 28px;}
     .footer-top{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:36px;}
-    .footer-brand .logo-name{color:#fff;font-size:18px;}
-    .footer-brand .logo-name span{color:#6EFFF9;}
-    .footer-lead{font-size:13px;line-height:1.8;margin-top:14px;max-width:340px;}
+    .footer-logo-img{height:34px;width:auto;display:block;margin-bottom:14px;}
+    .footer-lead{font-size:13px;line-height:1.8;max-width:340px;}
     .footer-info{margin-top:18px;font-size:13px;display:flex;flex-direction:column;gap:5px;}
     .footer-info a{color:rgba(255,255,255,.75);}
     .footer-nav{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
@@ -88,6 +104,7 @@
     @media(max-width:600px){
       .section{padding:60px 0;}
       .hd-nav{display:none;}
+      .contact-form-box{padding:24px 20px;}
     }
     .fi{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease;}
     .fi.vis{opacity:1;transform:none;}
@@ -100,14 +117,7 @@
 <header id="hd">
   <div class="hd-inner">
     <a class="logo" href="index.html">
-      <div class="logo-icon">
-        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 14 L13 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M13 10 L19 10 L19 16" stroke="#6EFFF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <text x="3" y="26" font-size="8" font-weight="900" fill="white" font-family="Arial">DX</text>
-        </svg>
-      </div>
-      <div class="logo-name">DX-<span>Consul</span></div>
+      <img src="./画像/DXコンサルロゴ.png" alt="DX-Consul" class="logo-img">
     </a>
     <nav class="hd-nav">
       <a href="index.html">ホーム</a>
@@ -136,16 +146,68 @@
 
       <!-- FORM -->
       <div class="contact-form-box fi">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSeZCH4YVtWCFmpzK8jNhvb8Tn0VvpQA_qgb6c9StU73pkDcvg/viewform?embedded=true"
-          width="100%"
-          height="800"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          loading="lazy">
-          読み込んでいます…
-        </iframe>
+        <form id="contactForm" action="https://formsubmit.co/tamanahak@dx-consul.com" method="POST">
+          <!-- FormSubmit設定 -->
+          <input type="hidden" name="_subject" value="【DX-Consul】お問い合わせが届きました">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="">
+
+          <div class="form-group">
+            <label class="form-label" for="name">お名前<span class="form-required">必須</span></label>
+            <input class="form-input" type="text" id="name" name="お名前" placeholder="例）田中 一郎" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="company">会社名・屋号</label>
+            <input class="form-input" type="text" id="company" name="会社名・屋号" placeholder="例）株式会社〇〇">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">メールアドレス<span class="form-required">必須</span></label>
+            <input class="form-input" type="email" id="email" name="メールアドレス" placeholder="例）info@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="tel">電話番号</label>
+            <input class="form-input" type="tel" id="tel" name="電話番号" placeholder="例）070-0000-0000">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="category">お問い合わせ種別<span class="form-required">必須</span></label>
+            <select class="form-select" id="category" name="お問い合わせ種別" required>
+              <option value="">選択してください</option>
+              <option value="無料相談を希望">無料相談を希望</option>
+              <option value="生成AI活用支援について">生成AI活用支援について</option>
+              <option value="クラウド導入支援について">クラウド導入支援について</option>
+              <option value="DX伴走支援について">DX伴走支援について</option>
+              <option value="料金・費用について">料金・費用について</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">お問い合わせ内容<span class="form-required">必須</span></label>
+            <textarea class="form-textarea" id="message" name="お問い合わせ内容" placeholder="現状の課題やご相談内容をご記入ください。「何から始めればいいかわからない」という段階でも構いません。" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="privacy-agree">
+              <input type="checkbox" id="privacyCheck" name="個人情報保護方針への同意" value="同意する" required>
+              <span class="privacy-agree-text">
+                <a href="privacy.html" target="_blank">個人情報保護方針</a>を確認し、個人情報の取り扱いに同意します。<span class="form-required">必須</span>
+              </span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit">送信する →</button>
+          <p class="form-note">送信後、1〜2営業日以内にご連絡いたします。</p>
+        </form>
+
+        <div class="sent-msg" id="sentMsg">
+          <h3>✅ 送信完了しました</h3>
+          <p>お問い合わせありがとうございます。<br>担当者より1〜2営業日以内にご連絡いたします。</p>
+        </div>
       </div>
 
       <!-- INFO -->
@@ -165,7 +227,7 @@
               <span class="info-icon">📞</span>
               <div class="info-text">
                 <strong>電話番号</strong>
-                <a href="tel:0988759530">098-875-9530</a>
+                <a href="tel:07019907207">070-1990-7207</a>
               </div>
             </div>
             <div class="info-row">
@@ -223,6 +285,10 @@
           </div>
         </div>
 
+        <div class="info-card" style="font-size:12px;color:var(--text-sub);line-height:1.8;">
+          ご送信いただいた個人情報は、お問い合わせへの返答および当社サービスのご案内にのみ使用します。詳しくは<a href="privacy.html" style="color:var(--teal);">個人情報保護方針</a>をご覧ください。
+        </div>
+
       </div>
     </div>
   </div>
@@ -233,11 +299,11 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo-name">DX-<span>Consul</span></div>
+        <img src="./画像/DXコンサルロゴ.png" alt="DX-Consul" class="footer-logo-img">
         <p class="footer-lead">IT専任者が不在でも大丈夫。生成AI・クラウド・DX伴走支援で、中小企業のデジタル経営を身近にします。</p>
         <div class="footer-info">
           <span>〒901-2131 沖縄県浦添市牧港4-10</span>
-          <span>TEL: 098-875-9530</span>
+          <span>TEL: <a href="tel:07019907207">070-1990-7207</a></span>
           <a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a>
         </div>
       </div>
@@ -246,9 +312,10 @@
         <a href="service.html">サービス</a>
         <a href="cases.html">ユースケース・FAQ</a>
         <a href="contact.html">お問い合わせ</a>
+        <a href="privacy.html">個人情報保護方針</a>
       </nav>
     </div>
-    <div class="footer-bottom">© 2025 DX-Consul. All rights reserved.</div>
+    <div class="footer-bottom">© 2026 DX-Consul. All rights reserved.</div>
   </div>
 </footer>
 
