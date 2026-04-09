@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>事例・FAQ｜DX-Consul</title>
-  <meta name="description" content="DX-Consulのコンサルティング事例とよくある質問をご紹介します。">
+  <title>ユースケース・実績・FAQ｜DX-Consul</title>
+  <meta name="description" content="DX-Consulの活用ユースケース、DX推進計画書策定支援実績、よくある質問をご紹介します。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
@@ -68,6 +68,17 @@
     .case-challenge p{font-size:14px;color:var(--text);line-height:1.75;}
     .case-results{display:flex;flex-wrap:wrap;gap:10px;}
     .case-result-item{background:var(--bg-gray);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;color:var(--teal);}
+
+    /* DX PLAN */
+    .dxplan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+    .dxplan-card{background:#fff;border-radius:14px;border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;transition:transform .25s,box-shadow .25s;}
+    .dxplan-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+    .dxplan-img-wrap{height:150px;overflow:hidden;}
+    .dxplan-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+    .dxplan-body{padding:16px 18px;}
+    .dxplan-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--teal);background:#E0F5F4;padding:3px 10px;border-radius:12px;margin-bottom:8px;letter-spacing:.06em;}
+    .dxplan-industry{font-size:15px;font-weight:700;color:var(--navy);}
+    @media(max-width:900px){.dxplan-grid{grid-template-columns:repeat(2,1fr);}}
 
     /* FAQ */
     .faq-list{display:flex;flex-direction:column;gap:16px;}
@@ -254,6 +265,60 @@
   </div>
 </section>
 
+<!-- DX PLAN ACHIEVEMENTS -->
+<section id="dx-plan" class="section section-gray">
+  <div class="container">
+    <div class="sec-head fi">
+      <div class="label">策定支援実績</div>
+      <h2 class="sec-title">DX推進計画書 策定支援実績</h2>
+      <p class="sec-sub">各業種の事業者さまに対し、DX推進計画書の策定支援を行った実績があります。</p>
+    </div>
+    <div class="dxplan-grid fi">
+
+      <div class="dxplan-card">
+        <div class="dxplan-img-wrap">
+          <img src="./画像/建設業.png" alt="建設業">
+        </div>
+        <div class="dxplan-body">
+          <span class="dxplan-badge">DX推進計画書 策定支援</span>
+          <div class="dxplan-industry">建設業</div>
+        </div>
+      </div>
+
+      <div class="dxplan-card">
+        <div class="dxplan-img-wrap">
+          <img src="./画像/食品製造業.png" alt="食品製造業">
+        </div>
+        <div class="dxplan-body">
+          <span class="dxplan-badge">DX推進計画書 策定支援</span>
+          <div class="dxplan-industry">食品製造業</div>
+        </div>
+      </div>
+
+      <div class="dxplan-card">
+        <div class="dxplan-img-wrap">
+          <img src="./画像/建機販売業.png" alt="建設機械販売業">
+        </div>
+        <div class="dxplan-body">
+          <span class="dxplan-badge">DX推進計画書 策定支援</span>
+          <div class="dxplan-industry">建設機械販売業</div>
+        </div>
+      </div>
+
+      <div class="dxplan-card">
+        <div class="dxplan-img-wrap">
+          <img src="./画像/ベンチャー企業.png" alt="ベンチャー企業">
+        </div>
+        <div class="dxplan-body">
+          <span class="dxplan-badge">DX推進計画書 策定支援</span>
+          <div class="dxplan-industry">ベンチャー企業</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq" class="section section-gray">
   <div class="container">
@@ -345,8 +410,7 @@
         <p class="footer-lead">IT専任者が不在でも大丈夫。生成AI・クラウド・DX伴走支援で、中小企業のデジタル経営を身近にします。</p>
         <div class="footer-info">
           <span>〒901-2131 沖縄県浦添市牧港4-10</span>
-          <span>TEL: <a href="tel:07019907207" style="color:rgba(255,255,255,.75);">070-1990-7207</a></span>
-          <a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a>
+          <span>📬 お問い合わせは<a href="contact.html" style="color:rgba(255,255,255,.85);">フォームをご利用ください</a></span>
         </div>
       </div>
       <nav class="footer-nav">
