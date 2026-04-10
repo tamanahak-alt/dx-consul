@@ -16,6 +16,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
@@ -68,7 +69,8 @@
     .svc-it .svc-head{background:linear-gradient(135deg,#1A6FBB 0%,#3B9AE8 100%);}
     .svc-dx .svc-head{background:linear-gradient(135deg,#0A7B74 0%,#12C5BB 100%);}
     .svc-ai .svc-head{background:linear-gradient(135deg,#5B2D9E 0%,#9B59CF 100%);}
-    .svc-icon{font-size:34px;margin-bottom:12px;}
+    .svc-icon{width:60px;height:60px;border-radius:14px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+    .svc-icon i{font-size:28px;color:#fff;}
     .svc-head h3{font-size:19px;font-weight:900;margin-bottom:8px;}
     .svc-head p{font-size:13px;opacity:.85;line-height:1.7;}
     .svc-body{padding:22px 26px;background:#fff;}
@@ -95,8 +97,10 @@
     .flow-wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;}
     .flow-wrap::before{content:'';position:absolute;top:34px;left:calc(10% + 24px);right:calc(10% + 24px);height:2px;background:var(--border);z-index:0;}
     .flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px;position:relative;z-index:1;}
-    .flow-circle{width:68px;height:68px;border-radius:50%;border:3px solid var(--teal);background:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;box-shadow:0 3px 12px rgba(10,123,116,.18);}
+    .flow-circle{width:68px;height:68px;border-radius:50%;border:3px solid var(--teal);background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px;box-shadow:0 3px 12px rgba(10,123,116,.18);}
+    .flow-circle i{font-size:24px;color:var(--teal);}
     .flow-step.active .flow-circle{background:var(--teal);}
+    .flow-step.active .flow-circle i{color:#fff;}
     .flow-badge{position:absolute;top:-6px;right:calc(50% - 40px);background:var(--accent2);color:#fff;font-size:10px;font-weight:700;padding:1px 8px;border-radius:10px;}
     .flow-step h4{font-size:13px;font-weight:700;color:var(--teal);margin-bottom:5px;}
     .flow-step p{font-size:11px;color:var(--text-sub);line-height:1.6;}
@@ -161,7 +165,9 @@
     /* Stakeholder */
     .stakeholder-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px;}
     .stakeholder-card{background:#fff;border:1px solid #C8DEFF;border-radius:10px;padding:10px 12px;text-align:center;}
-    .stakeholder-icon{font-size:20px;margin-bottom:4px;}
+    .stakeholder-icon{font-size:20px;margin-bottom:6px;line-height:1;}
+    .stakeholder-icon i{font-size:22px;color:var(--blue);}
+    .stakeholder-card.highlight .stakeholder-icon i{color:#fff;}
     .stakeholder-name{font-size:12px;font-weight:700;color:var(--navy);}
     .stakeholder-card.highlight{background:linear-gradient(135deg,var(--blue),#3B9AE8);border-color:transparent;}
     .stakeholder-card.highlight .stakeholder-name{color:#fff;}
@@ -225,7 +231,7 @@
     <div class="svc-cards">
       <div class="svc-card svc-ai fi">
         <div class="svc-head">
-          <div class="svc-icon">🤖</div>
+          <div class="svc-icon"><i class="fa-solid fa-robot"></i></div>
           <h3>生成AI活用・定着支援</h3>
           <p>生成AIを活用し定型業務の自動化・新しいアイデアの創出を支援。社内研修で全社への定着をサポートします。</p>
         </div>
@@ -242,7 +248,7 @@
       </div>
       <div class="svc-card svc-it fi fi-d1">
         <div class="svc-head">
-          <div class="svc-icon">☁️</div>
+          <div class="svc-icon"><i class="fa-solid fa-cloud"></i></div>
           <h3>クラウド導入・活用支援</h3>
           <p>Google Workspace・Microsoft 365等の選定から導入、社内研修までをワンストップで支援します。</p>
         </div>
@@ -259,7 +265,7 @@
       </div>
       <div class="svc-card svc-dx fi fi-d2">
         <div class="svc-head">
-          <div class="svc-icon">📊</div>
+          <div class="svc-icon"><i class="fa-solid fa-diagram-project"></i></div>
           <h3>DX伴走支援</h3>
           <p>現状の業務課題を可視化し、あるべき姿へのロードマップを策定。経営層と現場の橋渡しを行います。</p>
         </div>
@@ -326,19 +332,19 @@
             <div style="font-size:11px;font-weight:700;color:var(--blue);text-align:center;margin-bottom:10px;">関わるステークホルダー</div>
             <div class="stakeholder-grid">
               <div class="stakeholder-card">
-                <div class="stakeholder-icon">👔</div>
+                <div class="stakeholder-icon"><i class="fa-solid fa-user-tie"></i></div>
                 <div class="stakeholder-name">経営幹部</div>
               </div>
               <div class="stakeholder-card">
-                <div class="stakeholder-icon">💻</div>
+                <div class="stakeholder-icon"><i class="fa-solid fa-laptop"></i></div>
                 <div class="stakeholder-name">IT推進メンバー</div>
               </div>
               <div class="stakeholder-card">
-                <div class="stakeholder-icon">📊</div>
+                <div class="stakeholder-icon"><i class="fa-solid fa-calculator"></i></div>
                 <div class="stakeholder-name">経理部門</div>
               </div>
               <div class="stakeholder-card highlight">
-                <div class="stakeholder-icon">🤝</div>
+                <div class="stakeholder-icon"><i class="fa-solid fa-handshake"></i></div>
                 <div class="stakeholder-name">DXコンサル（伴走）</div>
               </div>
             </div>
@@ -390,7 +396,7 @@
             </div>
           </div>
           <div style="border-top:1px solid #D8C8F0;padding-top:16px;">
-            <div style="font-size:11px;font-weight:700;color:#7B4CC5;text-align:center;margin-bottom:10px;">📈 伴走の複利効果</div>
+            <div style="font-size:11px;font-weight:700;color:#7B4CC5;text-align:center;margin-bottom:10px;"><i class="fa-solid fa-arrow-trend-up" style="margin-right:5px;"></i>伴走の複利効果</div>
             <div class="ai-effect">
               <div class="ai-month">
                 <div class="ai-month-label">Month 1</div>
@@ -467,30 +473,30 @@
     </div>
     <div class="flow-wrap fi">
       <div class="flow-step active">
-        <div class="flow-circle">📩</div>
+        <div class="flow-circle"><i class="fa-solid fa-paper-plane"></i></div>
         <div class="flow-badge">無料</div>
         <h4>お問い合わせ</h4>
         <p>フォームからお気軽にご連絡</p>
       </div>
       <div class="flow-step">
-        <div class="flow-circle">💬</div>
+        <div class="flow-circle"><i class="fa-solid fa-comments"></i></div>
         <div class="flow-badge">無料</div>
         <h4>初回ヒアリング</h4>
         <p>Zoom等で30〜60分</p>
       </div>
       <div class="flow-step">
-        <div class="flow-circle">📋</div>
+        <div class="flow-circle"><i class="fa-solid fa-file-lines"></i></div>
         <div class="flow-badge">無料</div>
         <h4>課題整理・提案</h4>
         <p>現状整理と最適プランをご提案</p>
       </div>
       <div class="flow-step">
-        <div class="flow-circle">✅</div>
+        <div class="flow-circle"><i class="fa-solid fa-circle-check"></i></div>
         <h4>ご契約</h4>
         <p>内容・費用にご納得後スタート</p>
       </div>
       <div class="flow-step">
-        <div class="flow-circle">🚀</div>
+        <div class="flow-circle"><i class="fa-solid fa-rocket"></i></div>
         <h4>伴走支援スタート</h4>
         <p>定例MTGを軸に一緒に推進</p>
       </div>
