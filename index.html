@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DXコンサル｜中小企業のDX・IT・生成AI 伴走支援</title>
-  <meta name="description" content="IT専任者が不在でも大丈夫。デジタル経営をもっと身近に。DX・IT活用・生成AI導入を丁寧な伴走支援でサポートします。初回相談無料。沖縄県浦添市。">
+  <meta name="description" content="IT専任者が不在でも大丈夫。デジタル経営をもっと身近に。DX・IT活用・生成AI導入を丁寧な伴走支援でサポートします。初回相談無料。沖縄県那覇市。">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJM1T8F6K6"></script>
   <script>
@@ -111,6 +111,21 @@
     .mission-deco i{font-size:64px;color:rgba(255,255,255,.85);}
     .mission-title{font-size:clamp(22px,3.5vw,34px);font-weight:900;line-height:1.3;color:#fff;}
     .mission-text{font-size:16px;line-height:2;color:rgba(255,255,255,.9);max-width:640px;}
+
+    /* PROFILE */
+    .section-profile{background:var(--bg-gray);}
+    .profile-card{background:#fff;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);padding:40px 48px;max-width:760px;margin:0 auto;}
+    .profile-table{width:100%;border-collapse:collapse;}
+    .profile-table tr{border-bottom:1px solid var(--border);}
+    .profile-table tr:last-child{border-bottom:none;}
+    .profile-table th{width:110px;font-size:14px;font-weight:700;color:var(--teal);padding:14px 16px 14px 0;vertical-align:top;white-space:nowrap;}
+    .profile-table td{font-size:14px;color:var(--text);padding:14px 0;line-height:1.8;}
+    .profile-table td a{color:var(--blue);text-decoration:underline;}
+    @media(max-width:600px){
+      .profile-card{padding:24px 20px;}
+      .profile-table th{width:72px;font-size:13px;}
+      .profile-table td{font-size:13px;}
+    }
 
     /* FOOTER */
     #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:52px 0 28px;}
@@ -255,16 +270,69 @@
   </div>
 </section>
 
+<!-- PROFILE -->
+<section id="profile" class="section section-profile">
+  <div class="container">
+    <div class="sec-head fi">
+      <div class="label">代表プロフィール</div>
+      <h2 class="sec-title">DXコンサル について</h2>
+    </div>
+    <div class="profile-card fi">
+      <table class="profile-table">
+        <tr>
+          <th>名　称</th>
+          <td>ＤＸコンサル</td>
+        </tr>
+        <tr>
+          <th>代　表</th>
+          <td>玉那覇 勝良</td>
+        </tr>
+        <tr>
+          <th>設　立</th>
+          <td>2025年</td>
+        </tr>
+        <tr>
+          <th>メール</th>
+          <td><a href="mailto:tamanahak@dx-consul.com">tamanahak@dx-consul.com</a></td>
+        </tr>
+        <tr>
+          <th>所　属</th>
+          <td>ＩＴコーディネータ沖縄、日本ＩＴストラテジスト協会</td>
+        </tr>
+        <tr>
+          <th>資　格</th>
+          <td>ＩＴコーディネータ、システムアナリスト（情報処理試験）、宅地建物取引士</td>
+        </tr>
+        <tr>
+          <th>略　歴</th>
+          <td>
+            大学卒業後、大手ＩＴベンダーに３７年間勤務。<br>
+            システム開発、営業、プロジェクトマネージャ等に従事。<br>
+            独立後、個人事務所「ＤＸコンサル」を設立。<br>
+            現在は、建設業、食品製造業などのＤＸ推進計画書策定支援や、民間企業向け生成ＡＩ研修などを中心に活動中。
+          </td>
+        </tr>
+        <tr>
+          <th>著　書</th>
+          <td><a href="https://amzn.asia/d/0dCXTJzM" target="_blank" rel="noopener">「管理職のためのNotebookLM入門」（Kindle出版）</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
 <!-- MISSION -->
 <section id="mission" class="section section-mission">
   <div class="container">
     <div class="mission-inner fi">
       <div class="mission-deco"><i class="fa-solid fa-bullseye"></i></div>
       <div class="label" style="background:rgba(255,255,255,.2);color:#fff;">DXコンサルのミッション</div>
-      <h2 class="mission-title">中小企業のDX促進のために</h2>
+      <h2 class="mission-title">中小企業・小規模事業者の持続的成長を<br>牽引するDXパートナー</h2>
       <p class="mission-text">
-        DXコンサルは、中小企業および小規模事業者さまのDX促進のために生まれました。<br>
-        DXを活用して競争力強化のお手伝いをさせていただきます。
+        私たちは、中小企業および小規模事業者様の<br>
+        デジタルトランスフォーメーション（DX）推進を強力に支援します。<br>
+        最新テクノロジーと業務改革を掛け合わせ、お客様の市場における<br>
+        競争力強化とビジネス価値の最大化を実現します。
       </p>
       <a href="contact.html" class="btn btn-white" style="margin-top:12px;">まずは無料でご相談ください →</a>
     </div>
@@ -278,10 +346,6 @@
       <div class="footer-brand">
         <img src="./画像/DXコンサルロゴ.png" alt="DXコンサル" class="footer-logo-img">
         <p class="footer-lead">IT専任者が不在でも大丈夫。デジタル経営をもっと身近に。中小企業・小規模事業者さまのDX化を支援します。</p>
-        <div class="footer-info">
-          <span>📍 〒901-2131 沖縄県浦添市牧港4-10</span>
-          <span>📬 お問い合わせは<a href="contact.html" style="color:rgba(255,255,255,.85);">フォームをご利用ください</a></span>
-        </div>
       </div>
       <nav class="footer-nav">
         <a href="index.html">ホーム</a>
@@ -292,7 +356,7 @@
         <a href="privacy.html">個人情報保護方針</a>
       </nav>
     </div>
-    <div class="footer-bottom">Copyright 2026 DXコンサル All Rights Reserved.</div>
+    <div class="footer-bottom">Copyright 2025 DXコンサル All Rights Reserved.</div>
   </div>
 </footer>
 

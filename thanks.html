@@ -59,18 +59,22 @@
     .btn-teal:hover{background:#086b65;transform:translateY(-2px);}
 
     /* FOOTER */
-    #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:36px 0 20px;}
-    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-    .footer-logo-img{height:30px;width:auto;display:block;}
-    .footer-nav{display:flex;gap:20px;flex-wrap:wrap;}
-    .footer-nav a{font-size:13px;color:rgba(255,255,255,.7);transition:color .2s;}
+    #footer{background:var(--navy);color:rgba(255,255,255,.75);padding:52px 0 28px;}
+    .footer-top{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:36px;}
+    .footer-logo-img{height:34px;width:auto;display:block;margin-bottom:14px;}
+    .footer-lead{font-size:13px;line-height:1.8;max-width:340px;}
+    .footer-nav{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+    .footer-nav a{font-size:14px;color:rgba(255,255,255,.7);transition:color .2s;}
     .footer-nav a:hover{color:#6EFFF9;}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:20px;padding-top:16px;text-align:center;font-size:12px;color:rgba(255,255,255,.45);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;font-size:12px;color:rgba(255,255,255,.45);}
 
+    @media(max-width:900px){
+      .footer-top{grid-template-columns:1fr;gap:24px;}
+      .footer-nav{align-items:flex-start;}
+    }
     @media(max-width:600px){
       .thanks-card{padding:40px 24px;}
       .hd-nav{display:none;}
-      .footer-inner{flex-direction:column;align-items:flex-start;}
     }
   </style>
 </head>
@@ -122,17 +126,21 @@
 <!-- FOOTER -->
 <footer id="footer">
   <div class="container">
-    <div class="footer-inner">
-      <img src="./画像/DXコンサルロゴ.png" alt="DXコンサル" class="footer-logo-img">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="./画像/DXコンサルロゴ.png" alt="DXコンサル" class="footer-logo-img">
+        <p class="footer-lead">IT専任者が不在でも大丈夫。デジタル経営をもっと身近に。中小企業・小規模事業者さまのDX化を支援します。</p>
+      </div>
       <nav class="footer-nav">
         <a href="index.html">ホーム</a>
-        <a href="service.html">サービス</a>
-        <a href="cases.html">ユースケース・FAQ</a>
+        <a href="service.html">サービス案内</a>
+        <a href="cases.html">コンサルティング事例</a>
+        <a href="cases.html#faq">よくある質問</a>
         <a href="contact.html">お問い合わせ</a>
         <a href="privacy.html">個人情報保護方針</a>
       </nav>
     </div>
-    <div class="footer-bottom">Copyright 2026 DXコンサル All Rights Reserved.</div>
+    <div class="footer-bottom">Copyright 2025 DXコンサル All Rights Reserved.</div>
   </div>
 </footer>
 
