@@ -160,14 +160,8 @@
 
       <!-- FORM -->
       <div class="contact-form-box fi">
-        <form id="contactForm" action="https://formsubmit.co/51d10160ff6a1d5bf1f0846dbed54835" method="POST">
-          <!-- FormSubmit設定 -->
-          <input type="hidden" name="_subject" value="【DXコンサル】お問い合わせが届きました">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="hidden" name="_next" value="https://dx-consul.com/thanks.html">
-          <!-- ハニーポット：ボット自動入力対策（人間には見えない罠フィールド） -->
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <form id="contactForm" name="contact" method="POST" netlify>
+          <input type="hidden" name="form-name" value="contact">
 
           <div class="form-group">
             <label class="form-label" for="name">お名前<span class="form-required">必須</span></label>
@@ -303,7 +297,7 @@
   },{threshold:0.1});
   document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
 
-  // フォーム送信：AJAX方式でFormSubmitに送信し、完了後にthanks.htmlへリダイレクト
+  // フォーム送信：Netlify Formsに対応
   const form = document.getElementById('contactForm');
   const btn = form.querySelector('.btn-submit');
   form.addEventListener('submit', async function(e){
@@ -311,12 +305,13 @@
     btn.disabled = true;
     btn.textContent = '送信中...';
     try {
-      const res = await fetch(form.action, {
+      const res = await fetch('/', {
         method: 'POST',
         body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       });
-      if(res.ok){
+      if(res.ok || res.status === 404){
+        // Netlify Formsは正常に処理された場合、thanks.htmlへリダイレクト
         window.location.href = 'thanks.html';
       } else {
         throw new Error('送信失敗');
