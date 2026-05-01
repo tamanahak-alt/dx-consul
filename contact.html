@@ -300,27 +300,13 @@
   // フォーム送信：Netlify Formsに対応
   const form = document.getElementById('contactForm');
   const btn = form.querySelector('.btn-submit');
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
+  form.addEventListener('submit', function(e){
     btn.disabled = true;
     btn.textContent = '送信中...';
-    try {
-      const res = await fetch('/', {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if(res.ok || res.status === 404){
-        // Netlify Formsは正常に処理された場合、thanks.htmlへリダイレクト
-        window.location.href = 'thanks.html';
-      } else {
-        throw new Error('送信失敗');
-      }
-    } catch(err){
-      btn.disabled = false;
-      btn.textContent = '送信する →';
-      alert('送信に失敗しました。時間をおいて再度お試しいただくか、お電話にてご連絡ください。');
-    }
+    // Netlify Formsのデフォルト送信を許可し、送信後にthanks.htmlへリダイレクト
+    setTimeout(() => {
+      window.location.href = 'thanks.html';
+    }, 1000); // 1秒待機してからリダイレクト
   });
 </script>
 </body>
